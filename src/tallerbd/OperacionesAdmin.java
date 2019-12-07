@@ -69,15 +69,18 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
-    void MostrarTablaSemestre(){
+    void MostrarTablaEmpleados(){
     DefaultTableModel modelo = new DefaultTableModel();
-    modelo.addColumn("ID Semestre");
-    modelo.addColumn("Nombre Semestre");
-    modelo.addColumn("ID Status");
-    TablaSemestre.setModel(modelo);
+    modelo.addColumn("ID Empleado");
+    modelo.addColumn("Nombre");
+    modelo.addColumn("Telefono");
+    modelo.addColumn("Edad");
+    modelo.addColumn("Sexo");
+    modelo.addColumn("Domicilio");
+    TablaEmpleado.setModel(modelo);
     
-    String sql = "SELECT * FROM semestre";
-    String datos[] = new String [3];
+    String sql = "SELECT * FROM empleados";
+    String datos[] = new String [6];
     Statement st;
         try {
     st = cn.createStatement();
@@ -86,9 +89,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         datos[0]= rs.getString(1);
         datos[1]= rs.getString(2);
         datos[2]= rs.getString(3);
+        datos[3]= rs.getString(4);
+        datos[4]= rs.getString(5);
+        datos[5]= rs.getString(6);
         modelo.addRow(datos);
     }
-    TablaSemestre.setModel(modelo);
+    TablaEmpleado.setModel(modelo);
     } catch (SQLException ex) {
         Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
     }   
@@ -336,7 +342,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     }
      
      void limpiarproductos(){
-     IDProducto.setText("");
      NombreProducto.setText("");
      CodigoProducto.setText("");
      CaducidadProducto.setText("");
@@ -345,10 +350,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
      CostoProducto.setText("");
      StockProducto.setText("");
      }
-     void limpiarsemestre(){
-     txtIDSemestre.setText("");
-     txtNombreSemestre.setText("");
-     txtIDStatusSemestre.setText("");
+     void limpiarempleados(){
+     NombreEmpleado.setText("");
+     TelefonoEmpleado.setText("");
+     EdadEmpleado.setText("");
+     SexoEmpleado.setText("");
+     DomicilioEmpleado.setText("");     
      }
      void limpiaralumno(){
      txtIDAlumno.setText("");
@@ -422,8 +429,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         NombreStatus = new javax.swing.JLabel();
         NombreProducto = new javax.swing.JTextField();
-        IDStatus = new javax.swing.JLabel();
-        IDProducto = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -436,30 +441,34 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         PrecioProducto = new javax.swing.JTextField();
         CostoProducto = new javax.swing.JTextField();
         StockProducto = new javax.swing.JTextField();
-        GuardarStatus = new javax.swing.JButton();
+        GuardarProductos = new javax.swing.JButton();
         ConsultarProductos = new javax.swing.JButton();
-        LimpiarStatus = new javax.swing.JButton();
+        LimpiarProductos = new javax.swing.JButton();
         buscarproducto = new javax.swing.JTextField();
-        ModificarStatus = new javax.swing.JButton();
-        actualizarstatus = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Modificarproducto = new javax.swing.JButton();
+        actualizarproductos = new javax.swing.JButton();
+        eliminarproducto = new javax.swing.JButton();
         Semestre = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         NombreStatus1 = new javax.swing.JLabel();
-        txtNombreSemestre = new javax.swing.JTextField();
-        IDSemestre = new javax.swing.JLabel();
-        txtIDSemestre = new javax.swing.JTextField();
+        NombreEmpleado = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtIDStatusSemestre = new javax.swing.JTextField();
-        modificarsemestre = new javax.swing.JButton();
-        buscarsemestre = new javax.swing.JTextField();
+        TelefonoEmpleado = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        EdadEmpleado = new javax.swing.JTextField();
+        SexoEmpleado = new javax.swing.JTextField();
+        DomicilioEmpleado = new javax.swing.JTextField();
+        modificarempleado = new javax.swing.JButton();
+        buscarempleado = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        TablaSemestre = new javax.swing.JTable();
-        GuardarSemestre = new javax.swing.JButton();
-        ConsultarSemestre = new javax.swing.JButton();
+        TablaEmpleado = new javax.swing.JTable();
+        GuardarEmpleado = new javax.swing.JButton();
+        ConsultarEmpleados = new javax.swing.JButton();
         LimpiarSemestre = new javax.swing.JButton();
-        actualizarsemestre = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        actualizarempleados = new javax.swing.JButton();
+        EliminarEmpleado = new javax.swing.JButton();
         Alumno = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         NombreStatus2 = new javax.swing.JLabel();
@@ -653,8 +662,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
         NombreStatus.setText("Nombre");
 
-        IDStatus.setText("ID");
-
         jLabel29.setText("Codigo");
 
         jLabel30.setText("Caducidad");
@@ -680,13 +687,11 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(NombreStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                        .addComponent(IDStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(NombreStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(NombreProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                    .addComponent(IDProducto)
                     .addComponent(CodigoProducto)
                     .addComponent(CaducidadProducto)
                     .addComponent(MarcaProducto)
@@ -698,11 +703,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IDStatus)
-                    .addComponent(IDProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NombreStatus))
@@ -730,13 +731,13 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
                     .addComponent(StockProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        GuardarStatus.setText("Guardar");
-        GuardarStatus.addActionListener(new java.awt.event.ActionListener() {
+        GuardarProductos.setText("Guardar");
+        GuardarProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarStatusActionPerformed(evt);
+                GuardarProductosActionPerformed(evt);
             }
         });
 
@@ -747,31 +748,31 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             }
         });
 
-        LimpiarStatus.setText("Limpiar");
-        LimpiarStatus.addActionListener(new java.awt.event.ActionListener() {
+        LimpiarProductos.setText("Limpiar");
+        LimpiarProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimpiarStatusActionPerformed(evt);
+                LimpiarProductosActionPerformed(evt);
             }
         });
 
-        ModificarStatus.setText("Modificar");
-        ModificarStatus.addActionListener(new java.awt.event.ActionListener() {
+        Modificarproducto.setText("Modificar");
+        Modificarproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificarStatusActionPerformed(evt);
+                ModificarproductoActionPerformed(evt);
             }
         });
 
-        actualizarstatus.setText("Actualizar");
-        actualizarstatus.addActionListener(new java.awt.event.ActionListener() {
+        actualizarproductos.setText("Actualizar");
+        actualizarproductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarstatusActionPerformed(evt);
+                actualizarproductosActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Eliminar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        eliminarproducto.setText("Eliminar");
+        eliminarproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                eliminarproductoActionPerformed(evt);
             }
         });
 
@@ -792,13 +793,13 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ConsultarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(GuardarStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LimpiarStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(GuardarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LimpiarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(51, 51, 51)
                         .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(ModificarStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(actualizarstatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(Modificarproducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(actualizarproductos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                            .addComponent(eliminarproducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         StatusLayout.setVerticalGroup(
@@ -808,16 +809,16 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                     .addGroup(StatusLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuardarStatus)
-                            .addComponent(ModificarStatus))
+                            .addComponent(GuardarProductos)
+                            .addComponent(Modificarproducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LimpiarStatus)
-                            .addComponent(actualizarstatus))
+                            .addComponent(LimpiarProductos)
+                            .addComponent(actualizarproductos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ConsultarProductos)
-                            .addComponent(jButton1))
+                            .addComponent(eliminarproducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE))
                     .addGroup(StatusLayout.createSequentialGroup()
                         .addContainerGap()
@@ -833,14 +834,15 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        NombreStatus1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         NombreStatus1.setText("Nombre");
 
-        IDSemestre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        IDSemestre.setText("ID Semestre");
+        jLabel1.setText("Telefono");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("ID Status");
+        jLabel35.setText("Edad");
+
+        jLabel36.setText("Sexo");
+
+        jLabel37.setText("Domicilio");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -848,43 +850,55 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NombreStatus1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IDSemestre)
-                    .addComponent(jLabel1))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NombreStatus1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombreSemestre, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(txtIDSemestre)
-                    .addComponent(txtIDStatusSemestre))
+                    .addComponent(NombreEmpleado)
+                    .addComponent(TelefonoEmpleado)
+                    .addComponent(EdadEmpleado)
+                    .addComponent(SexoEmpleado)
+                    .addComponent(DomicilioEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
                 .addGap(45, 45, 45))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IDSemestre)
-                    .addComponent(txtIDSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(NombreStatus1)
+                    .addComponent(NombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombreSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NombreStatus1))
-                .addGap(32, 32, 32)
+                    .addComponent(jLabel1)
+                    .addComponent(TelefonoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtIDStatusSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap())
+                    .addComponent(jLabel35)
+                    .addComponent(EdadEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(SexoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(DomicilioEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
 
-        modificarsemestre.setText("Modificar");
-        modificarsemestre.addActionListener(new java.awt.event.ActionListener() {
+        modificarempleado.setText("Modificar");
+        modificarempleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarsemestreActionPerformed(evt);
+                modificarempleadoActionPerformed(evt);
             }
         });
 
-        TablaSemestre.setModel(new javax.swing.table.DefaultTableModel(
+        TablaEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -892,19 +906,19 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(TablaSemestre);
+        jScrollPane2.setViewportView(TablaEmpleado);
 
-        GuardarSemestre.setText("Guardar");
-        GuardarSemestre.addActionListener(new java.awt.event.ActionListener() {
+        GuardarEmpleado.setText("Guardar");
+        GuardarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarSemestreActionPerformed(evt);
+                GuardarEmpleadoActionPerformed(evt);
             }
         });
 
-        ConsultarSemestre.setText("Consultar");
-        ConsultarSemestre.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarEmpleados.setText("Consultar");
+        ConsultarEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarSemestreActionPerformed(evt);
+                ConsultarEmpleadosActionPerformed(evt);
             }
         });
 
@@ -915,17 +929,17 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             }
         });
 
-        actualizarsemestre.setText("Actualizar");
-        actualizarsemestre.addActionListener(new java.awt.event.ActionListener() {
+        actualizarempleados.setText("Actualizar");
+        actualizarempleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarsemestreActionPerformed(evt);
+                actualizarempleadosActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Eliminar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        EliminarEmpleado.setText("Eliminar");
+        EliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                EliminarEmpleadoActionPerformed(evt);
             }
         });
 
@@ -939,21 +953,22 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
-                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ConsultarSemestre)
-                            .addComponent(GuardarSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LimpiarSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(actualizarsemestre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(modificarsemestre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SemestreLayout.createSequentialGroup()
+                                .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ConsultarEmpleados)
+                                    .addComponent(GuardarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LimpiarSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(actualizarempleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(modificarempleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(EliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(buscarempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(SemestreLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buscarsemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(130, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         SemestreLayout.setVerticalGroup(
             SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -962,28 +977,28 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SemestreLayout.createSequentialGroup()
                         .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuardarSemestre)
-                            .addComponent(actualizarsemestre))
+                            .addComponent(GuardarEmpleado)
+                            .addComponent(actualizarempleados))
                         .addGap(9, 9, 9)
                         .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LimpiarSemestre)
-                            .addComponent(modificarsemestre))
+                            .addComponent(modificarempleado))
                         .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(SemestreLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(ConsultarSemestre))
+                                .addComponent(ConsultarEmpleados))
                             .addGroup(SemestreLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jButton2))))
+                                .addComponent(EliminarEmpleado)))
+                        .addGap(29, 29, 29)
+                        .addComponent(buscarempleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(buscarsemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(56, 56, 56)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
-        JTabbedPane.addTab("Semestre", Semestre);
+        JTabbedPane.addTab("Empleados", Semestre);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2376,17 +2391,16 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_RegresarMouseClicked
 
-    private void GuardarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarStatusActionPerformed
+    private void GuardarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarProductosActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO productos(ID_Producto,Nombre, Codigo, Caducidad, Marca,PRECIO,COSTO,Stock) VALUES (?,?,?,?,?,?,?,?)");
-            pps.setString (1, IDProducto.getText());
-            pps.setString (2, NombreProducto.getText());
-            pps.setString (3, CodigoProducto.getText());
-            pps.setString (4, CaducidadProducto.getText());
-            pps.setString (5, MarcaProducto.getText());
-            pps.setString (6, PrecioProducto.getText());
-            pps.setString (7, CostoProducto.getText());
-            pps.setString (8, StockProducto.getText());
+            PreparedStatement pps = cn.prepareStatement("INSERT INTO productos(Nombre, Codigo, Caducidad, Marca,PRECIO,COSTO,Stock) VALUES (?,?,?,?,?,?,?)");
+            pps.setString (1, NombreProducto.getText());
+            pps.setString (2, CodigoProducto.getText());
+            pps.setString (3, CaducidadProducto.getText());
+            pps.setString (4, MarcaProducto.getText());
+            pps.setString (5, PrecioProducto.getText());
+            pps.setString (6, CostoProducto.getText());
+            pps.setString (7, StockProducto.getText());
             
             pps.executeUpdate();
             MostrarTablaProductos();
@@ -2394,31 +2408,34 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_GuardarStatusActionPerformed
+    }//GEN-LAST:event_GuardarProductosActionPerformed
 
     private void ConsultarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarProductosActionPerformed
         MostrarTablaProductos();
     }//GEN-LAST:event_ConsultarProductosActionPerformed
 
-    private void GuardarSemestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarSemestreActionPerformed
+    private void GuardarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarEmpleadoActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO semestre(id_semestre,nombre_semestre, id_status) VALUES (?,?)");
-            pps.setString (1, txtIDSemestre.getText());
-            pps.setString (2, txtNombreSemestre.getText());
-            pps.setString (3, txtIDStatusSemestre.getText());
+            PreparedStatement pps = cn.prepareStatement("INSERT INTO empleados(Nombre, Telefono,Edad,Sexo,Domicilio) VALUES (?,?,?,?,?)");
+       
+            pps.setString (1, NombreEmpleado.getText());
+            pps.setString (2, TelefonoEmpleado.getText());
+            pps.setString (3, EdadEmpleado.getText());            
+            pps.setString (4, SexoEmpleado.getText());
+            pps.setString (5, DomicilioEmpleado.getText());
             
             pps.executeUpdate();
-            MostrarTablaSemestre();
+            MostrarTablaEmpleados();
             
             JOptionPane.showMessageDialog(null, "Datos guardados");
         } catch (SQLException ex) {
             Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_GuardarSemestreActionPerformed
+    }//GEN-LAST:event_GuardarEmpleadoActionPerformed
 
-    private void ConsultarSemestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarSemestreActionPerformed
-        MostrarTablaSemestre();
-    }//GEN-LAST:event_ConsultarSemestreActionPerformed
+    private void ConsultarEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarEmpleadosActionPerformed
+        MostrarTablaEmpleados();
+    }//GEN-LAST:event_ConsultarEmpleadosActionPerformed
 
     private void GuardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarAlumnoActionPerformed
         String valorPass = new String(PasswordAlumno.getPassword());
@@ -2590,12 +2607,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         MostrarTablaProyecto();
     }//GEN-LAST:event_ConsultarProyectoActionPerformed
 
-    private void LimpiarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarStatusActionPerformed
+    private void LimpiarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarProductosActionPerformed
         limpiarproductos();
-    }//GEN-LAST:event_LimpiarStatusActionPerformed
+    }//GEN-LAST:event_LimpiarProductosActionPerformed
 
     private void LimpiarSemestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarSemestreActionPerformed
-        limpiarsemestre();
+        limpiarempleados();
     }//GEN-LAST:event_LimpiarSemestreActionPerformed
 
     private void LimpiarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarAlumnoActionPerformed
@@ -2622,27 +2639,27 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         limpiarmateria();
     }//GEN-LAST:event_LimpiarMateriaActionPerformed
 
-    private void ModificarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarStatusActionPerformed
+    private void ModificarproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarproductoActionPerformed
         int fila = TablaProductos.getSelectedRow();
         if (fila>=0){
         buscarproducto.setText(TablaProductos.getValueAt(fila, 0).toString());
-        IDProducto.setText(TablaProductos.getValueAt(fila, 0).toString());
-        NombreProducto.setText(TablaProductos.getValueAt(fila, 1).toString());
-        CodigoProducto.setText(TablaProductos.getValueAt(fila, 2).toString());
-        CaducidadProducto.setText(TablaProductos.getValueAt(fila, 3).toString());
-        MarcaProducto.setText(TablaProductos.getValueAt(fila, 4).toString());
-        PrecioProducto.setText(TablaProductos.getValueAt(fila, 5).toString());
-        CostoProducto.setText(TablaProductos.getValueAt(fila, 6).toString());
-        StockProducto.setText(TablaProductos.getValueAt(fila, 7).toString());
+        
+        NombreProducto.setText(TablaProductos.getValueAt(fila, 0).toString());
+        CodigoProducto.setText(TablaProductos.getValueAt(fila, 1).toString());
+        CaducidadProducto.setText(TablaProductos.getValueAt(fila, 2).toString());
+        MarcaProducto.setText(TablaProductos.getValueAt(fila, 3).toString());
+        PrecioProducto.setText(TablaProductos.getValueAt(fila, 4).toString());
+        CostoProducto.setText(TablaProductos.getValueAt(fila, 5).toString());
+        StockProducto.setText(TablaProductos.getValueAt(fila, 6).toString());
         }
         else {
         JOptionPane.showMessageDialog(null,"Fila no selecionada");
         }
-    }//GEN-LAST:event_ModificarStatusActionPerformed
+    }//GEN-LAST:event_ModificarproductoActionPerformed
 
-    private void actualizarstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarstatusActionPerformed
+    private void actualizarproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarproductosActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE status SET ID_Producto='"+IDProducto.getText()+"',Nombre='"+NombreProducto.getText()+"',Codigo='"+CodigoProducto.getText()+
+            PreparedStatement pps = cn.prepareStatement ("UPDATE  SET Nombre='"+NombreProducto.getText()+"',Codigo='"+CodigoProducto.getText()+
             "',Caducidad='"+CaducidadProducto.getText()+"',Marca='"+MarcaProducto.getText()+"',PRECIO='"+PrecioProducto.getText()+
             "',COSTO='"+CostoProducto.getText()+"',Stock='"+StockProducto.getText()+"'WHERE ID_Producto='"+buscarproducto.getText()+"'");
             pps.executeUpdate();
@@ -2652,32 +2669,35 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_actualizarstatusActionPerformed
+    }//GEN-LAST:event_actualizarproductosActionPerformed
 
-    private void actualizarsemestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarsemestreActionPerformed
+    private void actualizarempleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarempleadosActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE semestre SET id_semestre='"+txtIDSemestre.getText()+"',nombre_semestre='"+txtNombreSemestre.getText()+"',id_status='"+"'WHERE id_semestre='"+buscarsemestre.getText()+"'");
+            PreparedStatement pps = cn.prepareStatement ("UPDATE empleados SET Nombre='"+NombreEmpleado.getText()+"',Telefono='"+TelefonoEmpleado.getText()+"',Edad='"+EdadEmpleado.getText()
+            +"',Sexo'"+SexoEmpleado.getText()+"',Domicilio'"+DomicilioEmpleado.getText()+"'WHERE Nombre='"+buscarempleado.getText()+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos actualizados");
-            limpiarsemestre();
-            MostrarTablaSemestre();
+            limpiarempleados();
+            MostrarTablaEmpleados();
         } catch (SQLException ex) {
             Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_actualizarsemestreActionPerformed
+    }//GEN-LAST:event_actualizarempleadosActionPerformed
 
-    private void modificarsemestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarsemestreActionPerformed
-        int fila = TablaSemestre.getSelectedRow();
+    private void modificarempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarempleadoActionPerformed
+        int fila = TablaEmpleado.getSelectedRow();
         if (fila>=0){
-        buscarsemestre.setText(TablaSemestre.getValueAt(fila, 0).toString());
-        txtIDSemestre.setText(TablaSemestre.getValueAt(fila, 0).toString());
-        txtNombreSemestre.setText(TablaSemestre.getValueAt(fila, 1).toString());
-        txtIDStatusSemestre.setText(TablaSemestre.getValueAt(fila, 2).toString());
+        buscarempleado.setText(TablaEmpleado.getValueAt(fila, 0).toString());
+        NombreEmpleado.setText(TablaEmpleado.getValueAt(fila, 1).toString());
+        TelefonoEmpleado.setText(TablaEmpleado.getValueAt(fila, 2).toString());
+        EdadEmpleado.setText(TablaEmpleado.getValueAt(fila, 3).toString());
+        SexoEmpleado.setText(TablaEmpleado.getValueAt(fila, 4).toString());
+        DomicilioEmpleado.setText(TablaEmpleado.getValueAt(fila, 5).toString());
         }
         else {
         JOptionPane.showMessageDialog(null,"Fila no selecionada");
         }
-    }//GEN-LAST:event_modificarsemestreActionPerformed
+    }//GEN-LAST:event_modificarempleadoActionPerformed
 
     private void modificaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificaralumnoActionPerformed
         int fila = TablaAlumno.getSelectedRow();
@@ -2911,7 +2931,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_actualizarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void eliminarproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarproductoActionPerformed
         int fila=TablaProductos.getSelectedRow();
         String valor = TablaProductos.getValueAt(fila, 0).toString();
         if (fila>=0){
@@ -2925,23 +2945,23 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_eliminarproductoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int fila=TablaSemestre.getSelectedRow();
-        String valor = TablaSemestre.getValueAt(fila, 0).toString();
+    private void EliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarEmpleadoActionPerformed
+        int fila=TablaEmpleado.getSelectedRow();
+        String valor = TablaEmpleado.getValueAt(fila, 0).toString();
         if (fila>=0){
         try {
-            PreparedStatement pps = cn.prepareStatement("DELETE FROM semestre WHERE id_semestre='"+valor+"'");
+            PreparedStatement pps = cn.prepareStatement("DELETE FROM empleados WHERE ID_Empleado='"+valor+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Dato Eliminado");
-            MostrarTablaSemestre();
+            MostrarTablaEmpleados();
         }
         catch (SQLException ex) {
         Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_EliminarEmpleadoActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        int fila=TablaAlumno.getSelectedRow();
@@ -3117,6 +3137,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField Calificacion;
     private javax.swing.JTextField CodigoProducto;
     private javax.swing.JButton ConsultarAlumnoGrupo;
+    private javax.swing.JButton ConsultarEmpleados;
     private javax.swing.JButton ConsultarEquipo;
     private javax.swing.JButton ConsultarGrupo;
     private javax.swing.JButton ConsultarMateria;
@@ -3124,30 +3145,29 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JButton ConsultarProductos;
     private javax.swing.JButton ConsultarProfesor;
     private javax.swing.JButton ConsultarProyecto;
-    private javax.swing.JButton ConsultarSemestre;
     private javax.swing.JButton ConsultarStats1;
     private javax.swing.JTextField CostoProducto;
+    private javax.swing.JTextField DomicilioEmpleado;
+    private javax.swing.JTextField EdadEmpleado;
+    private javax.swing.JButton EliminarEmpleado;
     private javax.swing.JPanel Equipo;
     private javax.swing.JTextField Fecha;
     private javax.swing.JPanel Grupo;
     private javax.swing.JButton GuardarAlumno;
     private javax.swing.JButton GuardarAlumnoGrupo;
+    private javax.swing.JButton GuardarEmpleado;
     private javax.swing.JButton GuardarEquipo;
     private javax.swing.JButton GuardarGrupo;
     private javax.swing.JButton GuardarMateria;
     private javax.swing.JButton GuardarMiembros;
+    private javax.swing.JButton GuardarProductos;
     private javax.swing.JButton GuardarProfesor;
     private javax.swing.JButton GuardarProyecto;
-    private javax.swing.JButton GuardarSemestre;
-    private javax.swing.JButton GuardarStatus;
     private javax.swing.JLabel IDAlumno;
     private javax.swing.JTextField IDEquipo;
     private javax.swing.JTextField IDGrupo;
     private javax.swing.JTextField IDMateria;
-    private javax.swing.JTextField IDProducto;
     private javax.swing.JTextField IDProfesor;
-    private javax.swing.JLabel IDSemestre;
-    private javax.swing.JLabel IDStatus;
     private javax.swing.JLabel IDStatus2;
     private javax.swing.JLabel IDStatus3;
     private javax.swing.JLabel IDStatus4;
@@ -3162,13 +3182,14 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JButton LimpiarGrupo;
     private javax.swing.JButton LimpiarMateria;
     private javax.swing.JButton LimpiarMiembros;
+    private javax.swing.JButton LimpiarProductos;
     private javax.swing.JButton LimpiarProfesor;
     private javax.swing.JButton LimpiarProyecto;
     private javax.swing.JButton LimpiarSemestre;
-    private javax.swing.JButton LimpiarStatus;
     private javax.swing.JTextField MarcaProducto;
     private javax.swing.JPanel Materia;
-    private javax.swing.JButton ModificarStatus;
+    private javax.swing.JButton Modificarproducto;
+    public javax.swing.JTextField NombreEmpleado;
     private javax.swing.JTextField NombreProducto;
     private javax.swing.JTextField NombreProyecto;
     private javax.swing.JLabel NombreStatus;
@@ -3187,11 +3208,13 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel Proyecto;
     private javax.swing.JButton Regresar;
     private javax.swing.JPanel Semestre;
+    private javax.swing.JTextField SexoEmpleado;
     private javax.swing.JPanel Status;
     private javax.swing.JTextField StatusProyect;
     private javax.swing.JTextField StockProducto;
     private javax.swing.JTable TablaAlumno;
     private javax.swing.JTable TablaAlumnoGrupo;
+    private javax.swing.JTable TablaEmpleado;
     private javax.swing.JTable TablaEquipo;
     private javax.swing.JTable TablaGrupo;
     private javax.swing.JTable TablaMateria;
@@ -3199,19 +3222,20 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTable TablaProductos;
     private javax.swing.JTable TablaProfesor;
     private javax.swing.JTable TablaProyecto;
-    private javax.swing.JTable TablaSemestre;
+    public javax.swing.JTextField TelefonoEmpleado;
     private javax.swing.JButton actualizar;
     private javax.swing.JButton actualizaralumno;
     private javax.swing.JButton actualizaralumnogrupo;
+    private javax.swing.JButton actualizarempleados;
     private javax.swing.JButton actualizarequipo;
     private javax.swing.JButton actualizargrupo;
     private javax.swing.JButton actualizarmateria;
     private javax.swing.JButton actualizarmiembros;
+    private javax.swing.JButton actualizarproductos;
     private javax.swing.JButton actualizarprofesor;
-    private javax.swing.JButton actualizarsemestre;
-    private javax.swing.JButton actualizarstatus;
     private javax.swing.JTextField buscaralumno;
     private javax.swing.JTextField buscaralumnogrupo;
+    private javax.swing.JTextField buscarempleado;
     private javax.swing.JTextField buscarequipo;
     private javax.swing.JTextField buscargrupo;
     private javax.swing.JTextField buscarmateria;
@@ -3219,16 +3243,14 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField buscarproducto;
     private javax.swing.JTextField buscarprofesor;
     private javax.swing.JTextField buscarproyecto;
-    private javax.swing.JTextField buscarsemestre;
     private javax.swing.JButton eliminaralumnogrupo;
     private javax.swing.JButton eliminarequipo;
     private javax.swing.JButton eliminargrupo;
     private javax.swing.JButton eliminarmateria;
     private javax.swing.JButton eliminarmiembros;
+    private javax.swing.JButton eliminarproducto;
     private javax.swing.JButton eliminarprofesor;
     private javax.swing.JButton eliminarproyecto;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3258,6 +3280,9 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -3286,13 +3311,13 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JButton modificaralumno;
     private javax.swing.JButton modificaralumnogrupo;
+    private javax.swing.JButton modificarempleado;
     private javax.swing.JButton modificarequipo;
     private javax.swing.JButton modificargrupo;
     private javax.swing.JButton modificarmateria;
     private javax.swing.JButton modificarmiembros;
     private javax.swing.JButton modificarprofesor;
     private javax.swing.JButton modificarproyecto;
-    private javax.swing.JButton modificarsemestre;
     private javax.swing.JTextField statusalumnogrupo;
     private javax.swing.JTextField statusequipo;
     private javax.swing.JTextField statusmiembros;
@@ -3316,15 +3341,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtIDProfesorAlumnoGrupo;
     private javax.swing.JTextField txtIDProfesorGrupo;
     private javax.swing.JTextField txtIDProyecto;
-    public javax.swing.JTextField txtIDSemestre;
     public javax.swing.JTextField txtIDStatusAlumno;
     private javax.swing.JTextField txtIDStatusProfesor;
-    public javax.swing.JTextField txtIDStatusSemestre;
     public javax.swing.JTextField txtNombreAlumno;
     private javax.swing.JTextField txtNombreEquipo;
     private javax.swing.JTextField txtNombreMateria;
     private javax.swing.JTextField txtNombreProfesor;
-    public javax.swing.JTextField txtNombreSemestre;
     private javax.swing.JTextField txtPassProfesor;
     private javax.swing.JLabel txtStatus;
     private javax.swing.JTextField txtStatusGrupo;

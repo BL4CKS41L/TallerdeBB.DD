@@ -78,14 +78,14 @@
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="ConsultarProductos" max="32767" attributes="0"/>
-                                  <Component id="GuardarStatus" max="32767" attributes="0"/>
-                                  <Component id="LimpiarStatus" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="GuardarProductos" max="32767" attributes="0"/>
+                                  <Component id="LimpiarProductos" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="ModificarStatus" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="actualizarstatus" alignment="0" pref="102" max="32767" attributes="0"/>
-                                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Modificarproducto" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="actualizarproductos" alignment="0" pref="102" max="32767" attributes="0"/>
+                                  <Component id="eliminarproducto" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -100,18 +100,18 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="GuardarStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ModificarStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GuardarProductos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Modificarproducto" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LimpiarStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="actualizarstatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LimpiarProductos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="actualizarproductos" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="ConsultarProductos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="eliminarproducto" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="134" max="32767" attributes="0"/>
                           </Group>
@@ -172,14 +172,12 @@
                                   <Component id="jLabel31" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
                                   <Component id="NombreStatus" alignment="0" pref="61" max="32767" attributes="0"/>
-                                  <Component id="IDStatus" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jLabel29" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="119" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="NombreProducto" pref="99" max="32767" attributes="0"/>
-                              <Component id="IDProducto" max="32767" attributes="0"/>
                               <Component id="CodigoProducto" max="32767" attributes="0"/>
                               <Component id="CaducidadProducto" max="32767" attributes="0"/>
                               <Component id="MarcaProducto" alignment="0" max="32767" attributes="0"/>
@@ -194,12 +192,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="IDStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="IDProducto" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="NombreProducto" min="-2" max="-2" attributes="0"/>
                               <Component id="NombreStatus" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -234,7 +227,7 @@
                               <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="StockProducto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="22" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -246,13 +239,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="NombreProducto">
-                </Component>
-                <Component class="javax.swing.JLabel" name="IDStatus">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="ID"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="IDProducto">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
@@ -298,12 +284,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="GuardarStatus">
+            <Component class="javax.swing.JButton" name="GuardarProductos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarStatusActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarProductosActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="ConsultarProductos">
@@ -314,38 +300,38 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarProductosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="LimpiarStatus">
+            <Component class="javax.swing.JButton" name="LimpiarProductos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LimpiarStatusActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LimpiarProductosActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="buscarproducto">
             </Component>
-            <Component class="javax.swing.JButton" name="ModificarStatus">
+            <Component class="javax.swing.JButton" name="Modificarproducto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModificarStatusActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModificarproductoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="actualizarstatus">
+            <Component class="javax.swing.JButton" name="actualizarproductos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarstatusActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarproductosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="eliminarproducto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarproductoActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -353,8 +339,8 @@
         <Container class="javax.swing.JPanel" name="Semestre">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Semestre">
-                <Property name="tabTitle" type="java.lang.String" value="Semestre"/>
+              <JTabbedPaneConstraints tabName="Empleados">
+                <Property name="tabTitle" type="java.lang.String" value="Empleados"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -364,31 +350,33 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="ConsultarSemestre" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GuardarSemestre" min="-2" pref="79" max="-2" attributes="0"/>
-                                  <Component id="LimpiarSemestre" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="actualizarsemestre" max="32767" attributes="0"/>
-                                  <Component id="modificarsemestre" max="32767" attributes="0"/>
-                                  <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="ConsultarEmpleados" min="-2" max="-2" attributes="0"/>
+                                          <Component id="GuardarEmpleado" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <Component id="LimpiarSemestre" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="actualizarempleados" max="32767" attributes="0"/>
+                                          <Component id="modificarempleado" max="32767" attributes="0"/>
+                                          <Component id="EliminarEmpleado" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="buscarempleado" min="-2" pref="140" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="buscarsemestre" min="-2" pref="140" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="479" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jScrollPane2" min="-2" pref="611" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="130" max="32767" attributes="0"/>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -399,32 +387,32 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="GuardarSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="actualizarsemestre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="GuardarEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="actualizarempleados" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="LimpiarSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="modificarsemestre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="modificarempleado" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="ConsultarSemestre" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ConsultarEmpleados" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="EliminarEmpleado" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="buscarempleado" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="buscarsemestre" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace pref="113" max="32767" attributes="0"/>
+                      <EmptySpace pref="78" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -442,16 +430,20 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NombreStatus1" min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="IDSemestre" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel37" max="32767" attributes="0"/>
+                              <Component id="NombreStatus1" max="32767" attributes="0"/>
+                              <Component id="jLabel1" alignment="0" pref="61" max="32767" attributes="0"/>
+                              <Component id="jLabel35" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="88" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtNombreSemestre" pref="129" max="32767" attributes="0"/>
-                              <Component id="txtIDSemestre" max="32767" attributes="0"/>
-                              <Component id="txtIDStatusSemestre" max="32767" attributes="0"/>
+                              <Component id="NombreEmpleado" max="32767" attributes="0"/>
+                              <Component id="TelefonoEmpleado" max="32767" attributes="0"/>
+                              <Component id="EdadEmpleado" max="32767" attributes="0"/>
+                              <Component id="SexoEmpleado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="DomicilioEmpleado" alignment="0" pref="129" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
@@ -460,22 +452,32 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="IDSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtIDSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="28" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtNombreSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="NombreStatus1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="NombreEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtIDStatusSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TelefonoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="EdadEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="8" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="SexoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DomicilioEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -483,54 +485,56 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="NombreStatus1">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtNombreSemestre">
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JLabel" name="IDSemestre">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="ID Semestre"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtIDSemestre">
+                <Component class="javax.swing.JTextField" name="NombreEmpleado">
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="ID Status"/>
+                    <Property name="text" type="java.lang.String" value="Telefono"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtIDStatusSemestre">
+                <Component class="javax.swing.JTextField" name="TelefonoEmpleado">
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel35">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Edad"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel36">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sexo"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel37">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Domicilio"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="EdadEmpleado">
+                </Component>
+                <Component class="javax.swing.JTextField" name="SexoEmpleado">
+                </Component>
+                <Component class="javax.swing.JTextField" name="DomicilioEmpleado">
+                </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="modificarsemestre">
+            <Component class="javax.swing.JButton" name="modificarempleado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarsemestreActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarempleadoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="buscarsemestre">
+            <Component class="javax.swing.JTextField" name="buscarempleado">
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
@@ -539,7 +543,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="TablaSemestre">
+                <Component class="javax.swing.JTable" name="TablaEmpleado">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="0" rowCount="0"/>
@@ -554,20 +558,20 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="GuardarSemestre">
+            <Component class="javax.swing.JButton" name="GuardarEmpleado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarSemestreActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarEmpleadoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="ConsultarSemestre">
+            <Component class="javax.swing.JButton" name="ConsultarEmpleados">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarSemestreActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarEmpleadosActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="LimpiarSemestre">
@@ -578,20 +582,20 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LimpiarSemestreActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="actualizarsemestre">
+            <Component class="javax.swing.JButton" name="actualizarempleados">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarsemestreActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarempleadosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="EliminarEmpleado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminarEmpleadoActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
