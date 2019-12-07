@@ -2643,14 +2643,13 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         int fila = TablaProductos.getSelectedRow();
         if (fila>=0){
         buscarproducto.setText(TablaProductos.getValueAt(fila, 0).toString());
-        
-        NombreProducto.setText(TablaProductos.getValueAt(fila, 0).toString());
-        CodigoProducto.setText(TablaProductos.getValueAt(fila, 1).toString());
-        CaducidadProducto.setText(TablaProductos.getValueAt(fila, 2).toString());
-        MarcaProducto.setText(TablaProductos.getValueAt(fila, 3).toString());
-        PrecioProducto.setText(TablaProductos.getValueAt(fila, 4).toString());
-        CostoProducto.setText(TablaProductos.getValueAt(fila, 5).toString());
-        StockProducto.setText(TablaProductos.getValueAt(fila, 6).toString());
+        NombreProducto.setText(TablaProductos.getValueAt(fila, 1).toString());
+        CodigoProducto.setText(TablaProductos.getValueAt(fila, 2).toString());
+        CaducidadProducto.setText(TablaProductos.getValueAt(fila, 3).toString());
+        MarcaProducto.setText(TablaProductos.getValueAt(fila, 4).toString());
+        PrecioProducto.setText(TablaProductos.getValueAt(fila, 5).toString());
+        CostoProducto.setText(TablaProductos.getValueAt(fila, 6).toString());
+        StockProducto.setText(TablaProductos.getValueAt(fila, 7).toString());
         }
         else {
         JOptionPane.showMessageDialog(null,"Fila no selecionada");
@@ -2659,7 +2658,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
     private void actualizarproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarproductosActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE  SET Nombre='"+NombreProducto.getText()+"',Codigo='"+CodigoProducto.getText()+
+            PreparedStatement pps = cn.prepareStatement ("UPDATE productos SET Nombre='"+NombreProducto.getText()+"',Codigo='"+CodigoProducto.getText()+
             "',Caducidad='"+CaducidadProducto.getText()+"',Marca='"+MarcaProducto.getText()+"',PRECIO='"+PrecioProducto.getText()+
             "',COSTO='"+CostoProducto.getText()+"',Stock='"+StockProducto.getText()+"'WHERE ID_Producto='"+buscarproducto.getText()+"'");
             pps.executeUpdate();
@@ -2674,7 +2673,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private void actualizarempleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarempleadosActionPerformed
         try {
             PreparedStatement pps = cn.prepareStatement ("UPDATE empleados SET Nombre='"+NombreEmpleado.getText()+"',Telefono='"+TelefonoEmpleado.getText()+"',Edad='"+EdadEmpleado.getText()
-            +"',Sexo'"+SexoEmpleado.getText()+"',Domicilio'"+DomicilioEmpleado.getText()+"'WHERE Nombre='"+buscarempleado.getText()+"'");
+            +"',Sexo'"+SexoEmpleado.getText()+"',Domicilio'"+DomicilioEmpleado.getText()+"'WHERE ID_Empleado='"+buscarempleado.getText()+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos actualizados");
             limpiarempleados();
