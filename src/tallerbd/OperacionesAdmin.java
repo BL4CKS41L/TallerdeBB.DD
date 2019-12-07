@@ -439,7 +439,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         GuardarStatus = new javax.swing.JButton();
         ConsultarProductos = new javax.swing.JButton();
         LimpiarStatus = new javax.swing.JButton();
-        buscarstatus = new javax.swing.JTextField();
+        buscarproducto = new javax.swing.JTextField();
         ModificarStatus = new javax.swing.JButton();
         actualizarstatus = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -785,7 +785,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buscarstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(buscarproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(StatusLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -823,7 +823,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(buscarstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buscarproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
@@ -2625,9 +2625,15 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private void ModificarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarStatusActionPerformed
         int fila = TablaProductos.getSelectedRow();
         if (fila>=0){
-        buscarstatus.setText(TablaProductos.getValueAt(fila, 0).toString());
+        buscarproducto.setText(TablaProductos.getValueAt(fila, 0).toString());
         IDProducto.setText(TablaProductos.getValueAt(fila, 0).toString());
         NombreProducto.setText(TablaProductos.getValueAt(fila, 1).toString());
+        CodigoProducto.setText(TablaProductos.getValueAt(fila, 2).toString());
+        CaducidadProducto.setText(TablaProductos.getValueAt(fila, 3).toString());
+        MarcaProducto.setText(TablaProductos.getValueAt(fila, 4).toString());
+        PrecioProducto.setText(TablaProductos.getValueAt(fila, 5).toString());
+        CostoProducto.setText(TablaProductos.getValueAt(fila, 6).toString());
+        StockProducto.setText(TablaProductos.getValueAt(fila, 7).toString());
         }
         else {
         JOptionPane.showMessageDialog(null,"Fila no selecionada");
@@ -2636,11 +2642,13 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
     private void actualizarstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarstatusActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE status SET id_status='"+IDProducto.getText()+"',nombre_status='"+NombreProducto.getText()+"'WHERE id_status='"+buscarstatus.getText()+"'");
+            PreparedStatement pps = cn.prepareStatement ("UPDATE status SET ID_Producto='"+IDProducto.getText()+"',Nombre='"+NombreProducto.getText()+"',Codigo='"+CodigoProducto.getText()+
+            "',Caducidad='"+CaducidadProducto.getText()+"',Marca='"+MarcaProducto.getText()+"',PRECIO='"+PrecioProducto.getText()+
+            "',COSTO='"+CostoProducto.getText()+"',Stock='"+StockProducto.getText()+"'WHERE ID_Producto='"+buscarproducto.getText()+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos actualizados");
-            limpiarstatus();
-            MostrarTablaStatus();
+            limpiarproductos();
+            MostrarTablaProductos();
         } catch (SQLException ex) {
             Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2908,10 +2916,10 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         String valor = TablaProductos.getValueAt(fila, 0).toString();
         if (fila>=0){
         try {
-            PreparedStatement pps = cn.prepareStatement("DELETE FROM status WHERE id_status='"+valor+"'");
+            PreparedStatement pps = cn.prepareStatement("DELETE FROM productos WHERE ID_Producto='"+valor+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Dato Eliminado");
-            MostrarTablaStatus();
+            MostrarTablaProductos();
         }
         catch (SQLException ex) {
         Logger.getLogger(OperacionesAdmin.class.getName()).log(Level.SEVERE, null, ex);
@@ -3208,10 +3216,10 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField buscargrupo;
     private javax.swing.JTextField buscarmateria;
     private javax.swing.JTextField buscarmiembros;
+    private javax.swing.JTextField buscarproducto;
     private javax.swing.JTextField buscarprofesor;
     private javax.swing.JTextField buscarproyecto;
     private javax.swing.JTextField buscarsemestre;
-    private javax.swing.JTextField buscarstatus;
     private javax.swing.JButton eliminaralumnogrupo;
     private javax.swing.JButton eliminarequipo;
     private javax.swing.JButton eliminargrupo;
