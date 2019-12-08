@@ -25,5 +25,5 @@ public class ConexionMySQL {
     Statement createStatement(){
     throw new UnsupportedOperationException("No soportado");
     }
-    
+    // añadi un comentario
 }
