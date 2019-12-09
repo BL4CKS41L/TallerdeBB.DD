@@ -22,14 +22,14 @@ import javax.swing.JOptionPane;
  * @author Julian Enriquez
  */
 
-public class OperacionesAlumno extends javax.swing.JFrame {
+public class OperacionesGerente extends javax.swing.JFrame {
     ConexionMySQL con = new ConexionMySQL();
     Connection cn = con.conexion();
     
     /**
      * Creates new form ConsultasMySQL
      */
-    public OperacionesAlumno() {
+    public OperacionesGerente() {
         initComponents();
         this.setLocation(200,150);     
         
@@ -54,7 +54,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaStatus.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
     void MostrarTablaSemestre(){
@@ -78,7 +78,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaSemestre.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
       void MostrarTablaAlumno(){
@@ -110,7 +110,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaAlumno.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
       void MostrarTablaAlumnoGrupo(){
@@ -140,7 +140,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaAlumnoGrupo.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
     void MostrarTablaMiembros(){
@@ -163,7 +163,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaMiembros.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
     void MostrarTablaEquipo(){
@@ -189,7 +189,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaEquipo.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
     
@@ -220,7 +220,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaGrupo.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
         void MostrarTablaMateria(){
@@ -246,7 +246,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaMateria.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
 
@@ -281,7 +281,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaProfesor.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
      void MostrarTablaProyecto(){
@@ -319,35 +319,19 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     }
     TablaProyecto.setModel(modelo);
     } catch (SQLException ex) {
-        Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
     }   
     }
      
-     void limpiaralumno(){
-     txtIDAlumno.setText("");
-     txtNombreAlumno.setText("");
-     txtApellidosAlumno.setText("");
-     txtEmailAlumno.setText("");
-     txtTelefonoAlumno.setText("");
-     PasswordAlumno.setText("");
-     txtIDStatusAlumno.setText("");
+     void limpiarprofesor(){
+     txtIDProfesor.setText("");
+     txtNombreProfesor.setText("");
+     txtApellidosProfesor.setText("");
+     txtEmailProfesor.setText("");
+     txtTelefono.setText("");
+     txtPassProfesor.setText("");
+     txtIDStatusProfesor.setText("");
      }
-     void limpiaralumnogrupo(){
-     txtIDAlumnoGrupo.setText("");
-     txtGrupo.setText("");
-     txtIDProfesorAlumnoGrupo.setText("");
-     txtIDMateriaAlumnoGrupo.setText("");
-     }
-     void limpiarmiembros(){
-     txtIDAlumnoMiembros.setText("");
-     txtIDMiembro.setText("");
-     }
-     void limpiarequipo(){
-     txtIDEquipo.setText("");
-     txtIDAlumnoEquipo.setText("");
-     txtNombreEquipo.setText("");
-     }
-     
      void limpiarproyecto(){
      txtIDProyecto.setText("");
      IDEquipo.setText("");
@@ -405,14 +389,10 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         txtTelefonoAlumno = new javax.swing.JTextField();
         PasswordAlumno = new javax.swing.JPasswordField();
         txtIDStatusAlumno = new javax.swing.JTextField();
-        GuardarAlumno = new javax.swing.JButton();
         ConsultarStats1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         TablaAlumno = new javax.swing.JTable();
-        LimpiarAlumno = new javax.swing.JButton();
         buscaralumno = new javax.swing.JTextField();
-        modificaralumno = new javax.swing.JButton();
-        actualizaralumno = new javax.swing.JButton();
         AlumnoGrupo = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         NombreStatus3 = new javax.swing.JLabel();
@@ -425,15 +405,9 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         txtIDMateriaAlumnoGrupo = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         statusalumnogrupo = new javax.swing.JTextField();
-        GuardarAlumnoGrupo = new javax.swing.JButton();
         ConsultarAlumnoGrupo = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaAlumnoGrupo = new javax.swing.JTable();
-        LimpiarAlumnoGrupo = new javax.swing.JButton();
-        buscaralumnogrupo = new javax.swing.JTextField();
-        modificaralumnogrupo = new javax.swing.JButton();
-        actualizaralumnogrupo = new javax.swing.JButton();
-        eliminaralumnogrupo = new javax.swing.JButton();
         AlumnoMiembros = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         NombreStatus4 = new javax.swing.JLabel();
@@ -442,15 +416,9 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         txtIDAlumnoMiembros = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         statusmiembros = new javax.swing.JTextField();
-        GuardarMiembros = new javax.swing.JButton();
         ConsultarMiembros = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         TablaMiembros = new javax.swing.JTable();
-        LimpiarMiembros = new javax.swing.JButton();
-        buscarmiembros = new javax.swing.JTextField();
-        modificarmiembros = new javax.swing.JButton();
-        actualizarmiembros = new javax.swing.JButton();
-        eliminarmiembros = new javax.swing.JButton();
         Equipo = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         NombreStatus5 = new javax.swing.JLabel();
@@ -461,15 +429,9 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         txtNombreEquipo = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         statusequipo = new javax.swing.JTextField();
-        GuardarEquipo = new javax.swing.JButton();
         ConsultarEquipo = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         TablaEquipo = new javax.swing.JTable();
-        LimpiarEquipo = new javax.swing.JButton();
-        buscarequipo = new javax.swing.JTextField();
-        modificarequipo = new javax.swing.JButton();
-        actualizarequipo = new javax.swing.JButton();
-        eliminarequipo = new javax.swing.JButton();
         Grupo = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         NombreStatus6 = new javax.swing.JLabel();
@@ -513,9 +475,14 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         txtPassProfesor = new javax.swing.JTextField();
         txtIDStatusProfesor = new javax.swing.JTextField();
+        GuardarProfesor = new javax.swing.JButton();
         ConsultarProfesor = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         TablaProfesor = new javax.swing.JTable();
+        LimpiarProfesor = new javax.swing.JButton();
+        buscarprofesor = new javax.swing.JTextField();
+        modificarprofesor = new javax.swing.JButton();
+        actualizarprofesor = new javax.swing.JButton();
         Proyecto = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         NombreStatus9 = new javax.swing.JLabel();
@@ -536,7 +503,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         Fecha = new javax.swing.JTextField();
         Calificacion = new javax.swing.JTextField();
         StatusProyect = new javax.swing.JTextField();
-        GuardarProyecto = new javax.swing.JButton();
         ConsultarProyecto = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         TablaProyecto = new javax.swing.JTable();
@@ -544,7 +510,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         buscarproyecto = new javax.swing.JTextField();
         modificarproyecto = new javax.swing.JButton();
         actualizar = new javax.swing.JButton();
-        eliminarproyecto = new javax.swing.JButton();
         Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -566,6 +531,12 @@ public class OperacionesAlumno extends javax.swing.JFrame {
 
         IDStatus.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         IDStatus.setText("ID");
+
+        txtIDStatus.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIDStatusKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -703,7 +674,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                     .addGroup(SemestreLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(33, 33, 33)
                         .addComponent(ConsultarSemestre))
                     .addGroup(SemestreLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
@@ -715,10 +686,8 @@ public class OperacionesAlumno extends javax.swing.JFrame {
             .addGroup(SemestreLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SemestreLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(ConsultarSemestre))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConsultarSemestre))
                 .addGap(65, 65, 65)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(92, Short.MAX_VALUE))
@@ -807,13 +776,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                     .addComponent(txtIDStatusAlumno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        GuardarAlumno.setText("Guardar");
-        GuardarAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarAlumnoActionPerformed(evt);
-            }
-        });
-
         ConsultarStats1.setText("Consultar");
         ConsultarStats1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -831,27 +793,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(TablaAlumno);
 
-        LimpiarAlumno.setText("Limpiar");
-        LimpiarAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimpiarAlumnoActionPerformed(evt);
-            }
-        });
-
-        modificaralumno.setText("Modificar");
-        modificaralumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificaralumnoActionPerformed(evt);
-            }
-        });
-
-        actualizaralumno.setText("Actualizar");
-        actualizaralumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizaralumnoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout AlumnoLayout = new javax.swing.GroupLayout(Alumno);
         Alumno.setLayout(AlumnoLayout);
         AlumnoLayout.setHorizontalGroup(
@@ -862,15 +803,8 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AlumnoLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ConsultarStats1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(GuardarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LimpiarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(33, 33, 33)
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(actualizaralumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(modificaralumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(ConsultarStats1))
                     .addComponent(buscaralumno, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(97, Short.MAX_VALUE))
         );
@@ -879,16 +813,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
             .addGroup(AlumnoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AlumnoLayout.createSequentialGroup()
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuardarAlumno)
-                            .addComponent(modificaralumno))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LimpiarAlumno)
-                            .addComponent(actualizaralumno))
-                        .addGap(14, 14, 14)
-                        .addComponent(ConsultarStats1))
+                    .addComponent(ConsultarStats1)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buscaralumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -958,13 +883,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addGap(3, 3, 3))
         );
 
-        GuardarAlumnoGrupo.setText("Guardar");
-        GuardarAlumnoGrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarAlumnoGrupoActionPerformed(evt);
-            }
-        });
-
         ConsultarAlumnoGrupo.setText("Consultar");
         ConsultarAlumnoGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -982,34 +900,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(TablaAlumnoGrupo);
 
-        LimpiarAlumnoGrupo.setText("Limpiar");
-        LimpiarAlumnoGrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimpiarAlumnoGrupoActionPerformed(evt);
-            }
-        });
-
-        modificaralumnogrupo.setText("Modificar");
-        modificaralumnogrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificaralumnogrupoActionPerformed(evt);
-            }
-        });
-
-        actualizaralumnogrupo.setText("Actualizar");
-        actualizaralumnogrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizaralumnogrupoActionPerformed(evt);
-            }
-        });
-
-        eliminaralumnogrupo.setText("Eliminar");
-        eliminaralumnogrupo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminaralumnogrupoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout AlumnoGrupoLayout = new javax.swing.GroupLayout(AlumnoGrupo);
         AlumnoGrupo.setLayout(AlumnoGrupoLayout);
         AlumnoGrupoLayout.setHorizontalGroup(
@@ -1020,21 +910,11 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GuardarAlumnoGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ConsultarAlumnoGrupo)
-                            .addComponent(LimpiarAlumnoGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modificaralumnogrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(83, 83, 83)
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buscaralumnogrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(eliminaralumnogrupo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(actualizaralumnogrupo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(ConsultarAlumnoGrupo))
                     .addGroup(AlumnoGrupoLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
         AlumnoGrupoLayout.setVerticalGroup(
             AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1042,22 +922,8 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AlumnoGrupoLayout.createSequentialGroup()
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuardarAlumnoGrupo)
-                            .addComponent(buscaralumnogrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AlumnoGrupoLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(LimpiarAlumnoGrupo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ConsultarAlumnoGrupo))
-                            .addGroup(AlumnoGrupoLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(actualizaralumnogrupo)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(modificaralumnogrupo)
-                            .addComponent(eliminaralumnogrupo)))
+                        .addGap(9, 9, 9)
+                        .addComponent(ConsultarAlumnoGrupo))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1111,13 +977,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        GuardarMiembros.setText("Guardar");
-        GuardarMiembros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarMiembrosActionPerformed(evt);
-            }
-        });
-
         ConsultarMiembros.setText("Consultar");
         ConsultarMiembros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1135,34 +994,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(TablaMiembros);
 
-        LimpiarMiembros.setText("Limpiar");
-        LimpiarMiembros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimpiarMiembrosActionPerformed(evt);
-            }
-        });
-
-        modificarmiembros.setText("Modificar");
-        modificarmiembros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarmiembrosActionPerformed(evt);
-            }
-        });
-
-        actualizarmiembros.setText("Actualizar");
-        actualizarmiembros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarmiembrosActionPerformed(evt);
-            }
-        });
-
-        eliminarmiembros.setText("Eliminar");
-        eliminarmiembros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarmiembrosActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout AlumnoMiembrosLayout = new javax.swing.GroupLayout(AlumnoMiembros);
         AlumnoMiembros.setLayout(AlumnoMiembrosLayout);
         AlumnoMiembrosLayout.setHorizontalGroup(
@@ -1171,20 +1002,11 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buscarmiembros, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AlumnoMiembrosLayout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ConsultarMiembros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(GuardarMiembros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LimpiarMiembros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(59, 59, 59)
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(actualizarmiembros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(modificarmiembros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eliminarmiembros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                        .addComponent(ConsultarMiembros)))
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         AlumnoMiembrosLayout.setVerticalGroup(
             AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1192,21 +1014,10 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AlumnoMiembrosLayout.createSequentialGroup()
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuardarMiembros)
-                            .addComponent(modificarmiembros))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LimpiarMiembros)
-                            .addComponent(actualizarmiembros))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ConsultarMiembros)
-                            .addComponent(eliminarmiembros)))
+                        .addGap(34, 34, 34)
+                        .addComponent(ConsultarMiembros))
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(buscarmiembros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(64, 64, 64)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1269,13 +1080,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        GuardarEquipo.setText("Guardar");
-        GuardarEquipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarEquipoActionPerformed(evt);
-            }
-        });
-
         ConsultarEquipo.setText("Consultar");
         ConsultarEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1293,34 +1097,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(TablaEquipo);
 
-        LimpiarEquipo.setText("Limpiar");
-        LimpiarEquipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimpiarEquipoActionPerformed(evt);
-            }
-        });
-
-        modificarequipo.setText("Modificar");
-        modificarequipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarequipoActionPerformed(evt);
-            }
-        });
-
-        actualizarequipo.setText("Actualizar");
-        actualizarequipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarequipoActionPerformed(evt);
-            }
-        });
-
-        eliminarequipo.setText("Eliminar");
-        eliminarequipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarequipoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout EquipoLayout = new javax.swing.GroupLayout(Equipo);
         Equipo.setLayout(EquipoLayout);
         EquipoLayout.setHorizontalGroup(
@@ -1331,40 +1107,18 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(EquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ConsultarEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(GuardarEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LimpiarEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(buscarequipo))
-                        .addGap(75, 75, 75)
-                        .addGroup(EquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(actualizarequipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(modificarequipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eliminarequipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(ConsultarEquipo))
                     .addGroup(EquipoLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         EquipoLayout.setVerticalGroup(
             EquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EquipoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(EquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EquipoLayout.createSequentialGroup()
-                        .addGroup(EquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuardarEquipo)
-                            .addComponent(modificarequipo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(EquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LimpiarEquipo)
-                            .addComponent(actualizarequipo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(EquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ConsultarEquipo)
-                            .addComponent(eliminarequipo))
-                        .addGap(18, 18, 18)
-                        .addComponent(buscarequipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ConsultarEquipo)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1464,7 +1218,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                     .addGroup(GrupoLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
+                        .addGap(18, 18, 18)
                         .addComponent(ConsultarGrupo)))
                 .addContainerGap(159, Short.MAX_VALUE))
         );
@@ -1473,8 +1227,8 @@ public class OperacionesAlumno extends javax.swing.JFrame {
             .addGroup(GrupoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(GrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ConsultarGrupo))
+                    .addComponent(ConsultarGrupo)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(280, 280, 280))
@@ -1563,8 +1317,8 @@ public class OperacionesAlumno extends javax.swing.JFrame {
             .addGroup(MateriaLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(MateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ConsultarMateria))
+                    .addComponent(ConsultarMateria)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(280, 280, 280))
@@ -1587,6 +1341,12 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         jLabel17.setText("Password");
 
         jLabel18.setText("ID Status");
+
+        txtIDStatusProfesor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIDStatusProfesorKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1647,6 +1407,13 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        GuardarProfesor.setText("Guardar");
+        GuardarProfesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarProfesorActionPerformed(evt);
+            }
+        });
+
         ConsultarProfesor.setText("Consultar");
         ConsultarProfesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1664,6 +1431,27 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         ));
         jScrollPane9.setViewportView(TablaProfesor);
 
+        LimpiarProfesor.setText("Limpiar");
+        LimpiarProfesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LimpiarProfesorActionPerformed(evt);
+            }
+        });
+
+        modificarprofesor.setText("Modificar");
+        modificarprofesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarprofesorActionPerformed(evt);
+            }
+        });
+
+        actualizarprofesor.setText("Actualizar");
+        actualizarprofesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarprofesorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ProfesorLayout = new javax.swing.GroupLayout(Profesor);
         Profesor.setLayout(ProfesorLayout);
         ProfesorLayout.setHorizontalGroup(
@@ -1674,7 +1462,15 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(ConsultarProfesor))
+                        .addGroup(ProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ConsultarProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GuardarProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LimpiarProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buscarprofesor))
+                        .addGap(48, 48, 48)
+                        .addGroup(ProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(actualizarprofesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(modificarprofesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(ProfesorLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1685,7 +1481,18 @@ public class OperacionesAlumno extends javax.swing.JFrame {
             .addGroup(ProfesorLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(ProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ConsultarProfesor)
+                    .addGroup(ProfesorLayout.createSequentialGroup()
+                        .addGroup(ProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GuardarProfesor)
+                            .addComponent(modificarprofesor))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LimpiarProfesor)
+                            .addComponent(actualizarprofesor))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ConsultarProfesor)
+                        .addGap(45, 45, 45)
+                        .addComponent(buscarprofesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1791,13 +1598,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        GuardarProyecto.setText("Guardar");
-        GuardarProyecto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarProyectoActionPerformed(evt);
-            }
-        });
-
         ConsultarProyecto.setText("Consultar");
         ConsultarProyecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1836,13 +1636,6 @@ public class OperacionesAlumno extends javax.swing.JFrame {
             }
         });
 
-        eliminarproyecto.setText("Eliminar");
-        eliminarproyecto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarproyectoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout ProyectoLayout = new javax.swing.GroupLayout(Proyecto);
         Proyecto.setLayout(ProyectoLayout);
         ProyectoLayout.setHorizontalGroup(
@@ -1860,37 +1653,30 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                             .addGroup(ProyectoLayout.createSequentialGroup()
                                 .addGroup(ProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(ConsultarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(GuardarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(LimpiarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(LimpiarProyecto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(modificarproyecto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                                 .addComponent(buscarproyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(62, 62, 62))
                             .addGroup(ProyectoLayout.createSequentialGroup()
-                                .addGroup(ProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(actualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(modificarproyecto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(eliminarproyecto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(actualizar)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         ProyectoLayout.setVerticalGroup(
             ProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ProyectoLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(20, 20, 20)
                 .addGroup(ProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ProyectoLayout.createSequentialGroup()
                         .addGroup(ProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GuardarProyecto)
-                            .addComponent(buscarproyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buscarproyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ConsultarProyecto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(LimpiarProyecto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ConsultarProyecto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(modificarproyecto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(actualizar)
                         .addGap(18, 18, 18)
-                        .addComponent(eliminarproyecto)
+                        .addComponent(modificarproyecto)
+                        .addGap(18, 18, 18)
+                        .addComponent(actualizar)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -1922,9 +1708,8 @@ public class OperacionesAlumno extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(Regresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 475, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(22, 22, 22)
+                .addComponent(JTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE))
         );
 
         pack();
@@ -1936,356 +1721,152 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_RegresarMouseClicked
 
-    private void eliminarproyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarproyectoActionPerformed
-        int fila=TablaProyecto.getSelectedRow();
-        String valor = TablaProyecto.getValueAt(fila, 0).toString();
-        if (fila>=0){
-            try {
-                PreparedStatement pps = cn.prepareStatement("DELETE FROM proyecto WHERE id_proyecto='"+valor+"'");
-                pps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Dato Eliminado");
-                MostrarTablaProyecto();
-            }
-            catch (SQLException ex) {
-                Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_eliminarproyectoActionPerformed
-
-    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE proyecto SET id_proyecto='"+txtIDProyecto.getText()+
-                "',id_equipo='"+txtIDEquipo.getText()+"',id_grupo='"+IDGrupo.getText()+
-                "',id_profesor='"+IDProfesor.getText()+"',id_materia='"+IDMateria.getText()+"',nombre_proyecto='"+NombreProyecto.getText()+"',fecha_revision='"+Fecha.getText()+"',calificacion='"+Calificacion.getText()+"',status='"+StatusProyect.getText()+"'WHERE id_profesor='"+buscarproyecto.getText()+"'");
-            pps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos actualizados");
-            limpiarproyecto();
-            MostrarTablaProyecto();
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_actualizarActionPerformed
-
-    private void modificarproyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarproyectoActionPerformed
-        int fila = TablaProyecto.getSelectedRow();
-        if (fila>=0){
-            buscarproyecto.setText(TablaProyecto.getValueAt(fila, 0).toString());
-            txtIDProyecto.setText(TablaProyecto.getValueAt(fila, 0).toString());
-            IDEquipo.setText(TablaProyecto.getValueAt(fila, 1).toString());
-            IDGrupo.setText(TablaProyecto.getValueAt(fila, 2).toString());
-            IDProfesor.setText(TablaProyecto.getValueAt(fila, 3).toString());
-            IDMateria.setText(TablaProyecto.getValueAt(fila, 4).toString());
-            NombreProyecto.setText(TablaProyecto.getValueAt(fila, 5).toString());
-            Fecha.setText(TablaProyecto.getValueAt(fila, 6).toString());
-            Calificacion.setText(TablaProyecto.getValueAt(fila, 7).toString());
-            StatusProyect.setText(TablaProyecto.getValueAt(fila, 8).toString());
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"Fila no selecionada");
-        }
-    }//GEN-LAST:event_modificarproyectoActionPerformed
-
-    private void LimpiarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarProyectoActionPerformed
-        limpiarproyecto();
-    }//GEN-LAST:event_LimpiarProyectoActionPerformed
-
-    private void ConsultarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarProyectoActionPerformed
-        MostrarTablaProyecto();
-    }//GEN-LAST:event_ConsultarProyectoActionPerformed
-
-    private void GuardarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarProyectoActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO proyecto(id_proyecto,id_equipo,id_grupo,id_profesor,id_materia,nombre_proyecto,fecha_revision,califiacion,status) VALUES (?,?,?,?,?,?,?,?,?)");
-            pps.setString (1, txtIDProyecto.getText());
-            pps.setString (2, IDEquipo.getText());
-            pps.setString (3, IDGrupo.getText());
-            pps.setString (4, IDProfesor.getText());
-            pps.setString (5, IDMateria.getText());
-            pps.setString (6, NombreProyecto.getText());
-            pps.setString (7, Fecha.getText());
-            pps.setString (8, Calificacion.getText());
-            pps.setString (9, StatusProyect.getText());
-
-            pps.executeUpdate();
-            MostrarTablaProyecto();
-            JOptionPane.showMessageDialog(null, "Datos guardados");
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_GuardarProyectoActionPerformed
-
-    private void ConsultarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarProfesorActionPerformed
-        MostrarTablaProfesor();
-    }//GEN-LAST:event_ConsultarProfesorActionPerformed
-
-    private void ConsultarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarMateriaActionPerformed
-        MostrarTablaMateria();
-    }//GEN-LAST:event_ConsultarMateriaActionPerformed
-
-    private void ConsultarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarGrupoActionPerformed
-        MostrarTablaGrupo();
-    }//GEN-LAST:event_ConsultarGrupoActionPerformed
-
-    private void eliminarequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarequipoActionPerformed
-        int fila=TablaEquipo.getSelectedRow();
-        String valor = TablaEquipo.getValueAt(fila, 0).toString();
-        if (fila>=0){
-            try {
-                PreparedStatement pps = cn.prepareStatement("DELETE FROM equipo WHERE id_equipo='"+valor+"'");
-                pps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Dato Eliminado");
-                MostrarTablaEquipo();
-            }
-            catch (SQLException ex) {
-                Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_eliminarequipoActionPerformed
-
-    private void actualizarequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarequipoActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE equipo SET id_equipo='"+txtIDEquipo.getText()+"',id_alumno='"+txtIDAlumnoEquipo.getText()+"',nombre_equipo='"+txtNombreEquipo.getText()+"',stauts='"+statusequipo.getText() +"'WHERE id_equipo='"+buscarequipo.getText()+"'");
-            pps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos actualizados");
-            limpiarequipo();
-            MostrarTablaEquipo();
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_actualizarequipoActionPerformed
-
-    private void modificarequipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarequipoActionPerformed
-        int fila = TablaEquipo.getSelectedRow();
-        if (fila>=0){
-            buscarequipo.setText(TablaEquipo.getValueAt(fila, 0).toString());
-            txtIDEquipo.setText(TablaEquipo.getValueAt(fila, 0).toString());
-            txtIDAlumnoEquipo.setText(TablaEquipo.getValueAt(fila, 1).toString());
-            txtNombreEquipo.setText(TablaEquipo.getValueAt(fila, 2).toString());
-            statusequipo.setText(TablaEquipo.getValueAt(fila, 3).toString());
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"Fila no selecionada");
-        }
-    }//GEN-LAST:event_modificarequipoActionPerformed
-
-    private void LimpiarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarEquipoActionPerformed
-        limpiarequipo();
-    }//GEN-LAST:event_LimpiarEquipoActionPerformed
-
-    private void ConsultarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarEquipoActionPerformed
-        MostrarTablaEquipo();
-    }//GEN-LAST:event_ConsultarEquipoActionPerformed
-
-    private void GuardarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarEquipoActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO equipo(id_equipo,id_alumno, nombre_equipo) VALUES (?,?,?)");
-            pps.setString (1, txtIDEquipo.getText());
-            pps.setString (2, txtIDAlumnoEquipo.getText());
-            pps.setString (3, txtNombreEquipo.getText());
-
-            pps.executeUpdate();
-            MostrarTablaEquipo();
-            JOptionPane.showMessageDialog(null, "Datos guardados");
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_GuardarEquipoActionPerformed
-
-    private void eliminarmiembrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarmiembrosActionPerformed
-        int fila=TablaMiembros.getSelectedRow();
-        String valor = TablaMiembros.getValueAt(fila, 0).toString();
-        if (fila>=0){
-            try {
-                PreparedStatement pps = cn.prepareStatement("DELETE FROM alumno_miembros WHERE id_alumno='"+valor+"'");
-                pps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Dato Eliminado");
-                MostrarTablaMiembros();
-            }
-            catch (SQLException ex) {
-                Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_eliminarmiembrosActionPerformed
-
-    private void actualizarmiembrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarmiembrosActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE alumno_miembros SET id_alumno='"+txtIDAlumnoMiembros.getText()+"',id_miembro='"+txtIDMiembro.getText()+"',satus='"+statusmiembros.getText()+"'WHERE id_alumno='"+buscarmiembros.getText()+"'");
-            pps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos actualizados");
-            limpiarmiembros();
-            MostrarTablaMiembros();
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_actualizarmiembrosActionPerformed
-
-    private void modificarmiembrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarmiembrosActionPerformed
-        int fila = TablaAlumnoGrupo.getSelectedRow();
-        if (fila>=0){
-            buscarmiembros.setText(TablaMiembros.getValueAt(fila, 0).toString());
-            txtIDAlumnoMiembros.setText(TablaMiembros.getValueAt(fila, 0).toString());
-            txtIDMiembro.setText(TablaMiembros.getValueAt(fila, 1).toString());
-            statusmiembros.setText(TablaMiembros.getValueAt(fila, 2).toString());
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"Fila no selecionada");
-        }
-    }//GEN-LAST:event_modificarmiembrosActionPerformed
-
-    private void LimpiarMiembrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarMiembrosActionPerformed
-        limpiarmiembros();
-    }//GEN-LAST:event_LimpiarMiembrosActionPerformed
-
-    private void ConsultarMiembrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarMiembrosActionPerformed
-        MostrarTablaMiembros();
-    }//GEN-LAST:event_ConsultarMiembrosActionPerformed
-
-    private void GuardarMiembrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarMiembrosActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO alumno_miembros(id_alumno,id_miembro) VALUES (?,?)");
-            pps.setString (1, txtIDAlumnoMiembros.getText());
-            pps.setString (2, txtIDMiembro.getText());
-
-            pps.executeUpdate();
-            MostrarTablaMiembros();
-            JOptionPane.showMessageDialog(null, "Datos guardados");
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_GuardarMiembrosActionPerformed
-
-    private void eliminaralumnogrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminaralumnogrupoActionPerformed
-        int fila=TablaAlumnoGrupo.getSelectedRow();
-        String valor = TablaAlumnoGrupo.getValueAt(fila, 0).toString();
-        if (fila>=0){
-            try {
-                PreparedStatement pps = cn.prepareStatement("DELETE FROM alumno_grupo WHERE id_grupo='"+valor+"'");
-                pps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Dato Eliminado");
-                MostrarTablaAlumnoGrupo();
-            }
-            catch (SQLException ex) {
-                Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_eliminaralumnogrupoActionPerformed
-
-    private void actualizaralumnogrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizaralumnogrupoActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE alumno_grupo SET id_grupo='"+txtIDAlumnoGrupo.getText()+"',id_profesor='"+txtIDProfesorAlumnoGrupo.getText()+"',id_materia='"+txtIDMateriaAlumnoGrupo.getText()+
-                "',id_alumno='"+txtIDAlumnoGrupo.getText()+"',status='"+statusalumnogrupo.getText()+"'WHERE id_grupo='"+buscaralumnogrupo.getText()+"'");
-            pps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos actualizados");
-            limpiaralumnogrupo();
-            MostrarTablaAlumnoGrupo();
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_actualizaralumnogrupoActionPerformed
-
-    private void modificaralumnogrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificaralumnogrupoActionPerformed
-        int fila = TablaAlumnoGrupo.getSelectedRow();
-        if (fila>=0){
-            buscaralumnogrupo.setText(TablaAlumnoGrupo.getValueAt(fila, 0).toString());
-            txtGrupo.setText(TablaAlumnoGrupo.getValueAt(fila, 0).toString());
-            txtIDProfesorAlumnoGrupo.setText(TablaAlumnoGrupo.getValueAt(fila, 1).toString());
-            txtIDMateriaGrupo.setText(TablaAlumnoGrupo.getValueAt(fila, 2).toString());
-            txtIDAlumnoGrupo.setText(TablaAlumnoGrupo.getValueAt(fila, 3).toString());
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"Fila no selecionada");
-        }
-    }//GEN-LAST:event_modificaralumnogrupoActionPerformed
-
-    private void LimpiarAlumnoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarAlumnoGrupoActionPerformed
-        limpiaralumnogrupo();
-    }//GEN-LAST:event_LimpiarAlumnoGrupoActionPerformed
-
-    private void ConsultarAlumnoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarAlumnoGrupoActionPerformed
-        MostrarTablaGrupo();
-    }//GEN-LAST:event_ConsultarAlumnoGrupoActionPerformed
-
-    private void GuardarAlumnoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarAlumnoGrupoActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO alumno_grupo(id_grupo,id_profesor,id_materia,id_alumno,status) VALUES (?,?,?,?,?)");
-            pps.setString (1, txtGrupo.getText());
-            pps.setString (2, txtIDProfesorAlumnoGrupo.getText());
-            pps.setString (3, txtIDMateriaAlumnoGrupo.getText());
-            pps.setString (4, txtIDAlumnoGrupo.getText());
-            pps.setString (5, statusalumnogrupo.getText());
-
-            pps.executeUpdate();
-            MostrarTablaAlumnoGrupo();
-            JOptionPane.showMessageDialog(null, "Datos guardados");
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_GuardarAlumnoGrupoActionPerformed
-
-    private void actualizaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizaralumnoActionPerformed
-        try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE alumno SET id_alumno='"+txtIDAlumno.getText()+"',nombre_alumno='"+txtNombreAlumno.getText()+"',apellidos_alumno='"+txtApellidosAlumno.getText()+
-                "',email='"+txtEmailAlumno.getText()+"',telefono='"+txtTelefonoAlumno.getText()+"',password='"+PasswordAlumno.getText()+"'id_status='"+txtIDStatusAlumno.getText()+"'WHERE id_alumno='"+buscaralumno.getText()+"'");
-            pps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos actualizados");
-            limpiaralumno();
-            MostrarTablaAlumno();
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_actualizaralumnoActionPerformed
-
-    private void modificaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificaralumnoActionPerformed
-        int fila = TablaAlumno.getSelectedRow();
-        if (fila>=0){
-            buscaralumno.setText(TablaAlumno.getValueAt(fila, 0).toString());
-            txtIDAlumno.setText(TablaAlumno.getValueAt(fila, 0).toString());
-            txtNombreAlumno.setText(TablaAlumno.getValueAt(fila, 1).toString());
-            txtApellidosAlumno.setText(TablaAlumno.getValueAt(fila, 2).toString());
-            txtEmailAlumno.setText(TablaAlumno.getValueAt(fila, 3).toString());
-            txtTelefonoAlumno.setText(TablaAlumno.getValueAt(fila, 4).toString());
-            PasswordAlumno.setText(TablaAlumno.getValueAt(fila, 5).toString());
-            txtIDStatusAlumno.setText(TablaAlumno.getValueAt(fila, 6).toString());
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"Fila no selecionada");
-        }
-    }//GEN-LAST:event_modificaralumnoActionPerformed
-
-    private void LimpiarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarAlumnoActionPerformed
-        limpiaralumno();
-    }//GEN-LAST:event_LimpiarAlumnoActionPerformed
-
-    private void ConsultarStats1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarStats1ActionPerformed
-        MostrarTablaAlumno();
-    }//GEN-LAST:event_ConsultarStats1ActionPerformed
-
-    private void GuardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarAlumnoActionPerformed
-        String valorPass = new String(PasswordAlumno.getPassword());
-        try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO alumno(id_alumno,nombre_alumno,apellidos_alumno,email,telefono,password,id_status) VALUES (?,?,?,?,?,?,?)");
-            pps.setString (1, txtIDAlumno.getText());
-            pps.setString (2, txtNombreAlumno.getText());
-            pps.setString (3, txtApellidosAlumno.getText());
-            pps.setString (4, txtEmailAlumno.getText());
-            pps.setString (5, txtTelefonoAlumno.getText());
-            pps.setString (6, PasswordAlumno.getText());
-            pps.setString (7, txtIDStatusAlumno.getText());
-            pps.executeUpdate();
-            MostrarTablaAlumno();
-            JOptionPane.showMessageDialog(null, "Datos guardados");
-        } catch (SQLException ex) {
-            Logger.getLogger(OperacionesAlumno.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_GuardarAlumnoActionPerformed
+    private void ConsultarStatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarStatsActionPerformed
+        MostrarTablaStatus();
+    }//GEN-LAST:event_ConsultarStatsActionPerformed
 
     private void ConsultarSemestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarSemestreActionPerformed
         MostrarTablaSemestre();
     }//GEN-LAST:event_ConsultarSemestreActionPerformed
 
-    private void ConsultarStatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarStatsActionPerformed
-        MostrarTablaStatus();
-    }//GEN-LAST:event_ConsultarStatsActionPerformed
+    private void ConsultarStats1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarStats1ActionPerformed
+       MostrarTablaAlumno();
+    }//GEN-LAST:event_ConsultarStats1ActionPerformed
+
+    private void ConsultarAlumnoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarAlumnoGrupoActionPerformed
+        MostrarTablaGrupo();
+    }//GEN-LAST:event_ConsultarAlumnoGrupoActionPerformed
+
+    private void ConsultarMiembrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarMiembrosActionPerformed
+        MostrarTablaMiembros();
+    }//GEN-LAST:event_ConsultarMiembrosActionPerformed
+
+    private void ConsultarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarEquipoActionPerformed
+        MostrarTablaEquipo();
+    }//GEN-LAST:event_ConsultarEquipoActionPerformed
+
+    private void ConsultarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarGrupoActionPerformed
+        MostrarTablaGrupo();
+    }//GEN-LAST:event_ConsultarGrupoActionPerformed
+
+    private void ConsultarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarMateriaActionPerformed
+        MostrarTablaMateria();
+    }//GEN-LAST:event_ConsultarMateriaActionPerformed
+
+    private void GuardarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarProfesorActionPerformed
+        try {
+            PreparedStatement pps = cn.prepareStatement("INSERT INTO profesor(id_profesor,nombre_profesor, apellidos_profesor,email,telefono,password,id_status) VALUES (?,?,?,?,?,?,?)");
+            pps.setString (1, txtIDProfesor.getText());
+            pps.setString (2, txtNombreProfesor.getText());
+            pps.setString (3, txtApellidosProfesor.getText());
+            pps.setString (4, txtEmailProfesor.getText());
+            pps.setString (5, txtTelefono.getText());
+            pps.setString (6, txtPassProfesor.getText());
+            pps.setString (7, txtIDStatusProfesor.getText());
+                             
+            pps.executeUpdate();
+            MostrarTablaProfesor();
+            JOptionPane.showMessageDialog(null, "Datos guardados");
+        } catch (SQLException ex) {
+            Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_GuardarProfesorActionPerformed
+
+    private void ConsultarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarProfesorActionPerformed
+        MostrarTablaProfesor();
+    }//GEN-LAST:event_ConsultarProfesorActionPerformed
+
+    private void ConsultarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarProyectoActionPerformed
+        MostrarTablaProyecto();
+    }//GEN-LAST:event_ConsultarProyectoActionPerformed
+
+    private void LimpiarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarProfesorActionPerformed
+        limpiarprofesor(); 
+    }//GEN-LAST:event_LimpiarProfesorActionPerformed
+
+    private void LimpiarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarProyectoActionPerformed
+        limpiarproyecto();
+    }//GEN-LAST:event_LimpiarProyectoActionPerformed
+
+    private void modificarprofesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarprofesorActionPerformed
+        int fila = TablaProfesor.getSelectedRow();
+        if (fila>=0){
+        buscarprofesor.setText(TablaProfesor.getValueAt(fila, 0).toString());
+        txtIDProfesor.setText(TablaProfesor.getValueAt(fila, 0).toString());
+        txtNombreProfesor.setText(TablaProfesor.getValueAt(fila, 1).toString());
+        txtApellidosProfesor.setText(TablaProfesor.getValueAt(fila, 2).toString());
+        txtEmailProfesor.setText(TablaProfesor.getValueAt(fila, 3).toString());
+        txtTelefono.setText(TablaProfesor.getValueAt(fila, 4).toString());
+        txtPassProfesor.setText(TablaProfesor.getValueAt(fila, 5).toString());
+        txtIDStatusProfesor.setText(TablaProfesor.getValueAt(fila, 6).toString()); 
+        }
+        else {
+        JOptionPane.showMessageDialog(null,"Fila no selecionada");
+        }
+    }//GEN-LAST:event_modificarprofesorActionPerformed
+
+    private void actualizarprofesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarprofesorActionPerformed
+        try {
+            PreparedStatement pps = cn.prepareStatement ("UPDATE profesor SET id_profesor='"+txtIDProfesor.getText()+
+            "',nombre_profesor='"+txtNombreProfesor.getText()+"',apellidos_profesor='"+txtApellidosProfesor.getText()+
+            "',email='"+txtEmailProfesor.getText()+"'telefono='"+txtTelefono.getText()+"'password='"+txtPassProfesor.getText()+"'id_status='"+txtIDStatusProfesor.getText()+"'WHERE id_profesor='"+buscarprofesor.getText()+"'");
+            pps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos actualizados");
+            limpiarprofesor();
+            MostrarTablaProfesor();
+        } catch (SQLException ex) {
+            Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_actualizarprofesorActionPerformed
+
+    private void modificarproyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarproyectoActionPerformed
+        int fila = TablaProyecto.getSelectedRow();
+        if (fila>=0){
+        buscarproyecto.setText(TablaProyecto.getValueAt(fila, 0).toString());
+        txtIDProyecto.setText(TablaProyecto.getValueAt(fila, 0).toString());
+        IDEquipo.setText(TablaProyecto.getValueAt(fila, 1).toString());
+        IDGrupo.setText(TablaProyecto.getValueAt(fila, 2).toString());
+        IDProfesor.setText(TablaProyecto.getValueAt(fila, 3).toString());
+        IDMateria.setText(TablaProyecto.getValueAt(fila, 4).toString());
+        NombreProyecto.setText(TablaProyecto.getValueAt(fila, 5).toString());
+        Fecha.setText(TablaProyecto.getValueAt(fila, 6).toString()); 
+        Calificacion.setText(TablaProyecto.getValueAt(fila, 7).toString()); 
+        StatusProyect.setText(TablaProyecto.getValueAt(fila, 8).toString()); 
+        }
+        else {
+        JOptionPane.showMessageDialog(null,"Fila no selecionada");
+        }
+    }//GEN-LAST:event_modificarproyectoActionPerformed
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        try {
+            PreparedStatement pps = cn.prepareStatement ("UPDATE proyecto SET id_proyecto='"+txtIDProyecto.getText()+
+            "',id_equipo='"+txtIDEquipo.getText()+"',id_grupo='"+IDGrupo.getText()+
+            "',id_profesor='"+IDProfesor.getText()+"',id_materia='"+IDMateria.getText()+"',nombre_proyecto='"+NombreProyecto.getText()+"',fecha_revision='"+Fecha.getText()+"',calificacion='"+Calificacion.getText()+"',status='"+StatusProyect.getText()+"'WHERE id_profesor='"+buscarprofesor.getText()+"'");
+            pps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos actualizados");
+            limpiarproyecto();
+            MostrarTablaProyecto();
+        } catch (SQLException ex) {
+            Logger.getLogger(OperacionesGerente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_actualizarActionPerformed
+
+    private void txtIDStatusProfesorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDStatusProfesorKeyTyped
+       char validar= evt.getKeyChar();
+       if (Character.isLetter(validar)){
+       getToolkit().beep();
+       evt.consume();
+       }
+    }//GEN-LAST:event_txtIDStatusProfesorKeyTyped
+
+    private void txtIDStatusKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDStatusKeyTyped
+        char validar= evt.getKeyChar();
+       if (Character.isLetter(validar)){
+       getToolkit().beep();
+       evt.consume();
+       }
+    }//GEN-LAST:event_txtIDStatusKeyTyped
 
     /**
      * @param args the command line arguments
@@ -2304,14 +1885,30 @@ public class OperacionesAlumno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(OperacionesAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OperacionesGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(OperacionesAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OperacionesGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(OperacionesAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OperacionesGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(OperacionesAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OperacionesGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -2332,7 +1929,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OperacionesAlumno().setVisible(true);
+                new OperacionesGerente().setVisible(true);
             }
         });
     }
@@ -2355,11 +1952,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     private javax.swing.JPanel Equipo;
     private javax.swing.JTextField Fecha;
     private javax.swing.JPanel Grupo;
-    private javax.swing.JButton GuardarAlumno;
-    private javax.swing.JButton GuardarAlumnoGrupo;
-    private javax.swing.JButton GuardarEquipo;
-    private javax.swing.JButton GuardarMiembros;
-    private javax.swing.JButton GuardarProyecto;
+    private javax.swing.JButton GuardarProfesor;
     private javax.swing.JLabel IDAlumno;
     private javax.swing.JTextField IDEquipo;
     private javax.swing.JTextField IDGrupo;
@@ -2375,10 +1968,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     private javax.swing.JLabel IDStatus7;
     private javax.swing.JLabel IDStatus8;
     private javax.swing.JTabbedPane JTabbedPane;
-    private javax.swing.JButton LimpiarAlumno;
-    private javax.swing.JButton LimpiarAlumnoGrupo;
-    private javax.swing.JButton LimpiarEquipo;
-    private javax.swing.JButton LimpiarMiembros;
+    private javax.swing.JButton LimpiarProfesor;
     private javax.swing.JButton LimpiarProyecto;
     private javax.swing.JPanel Materia;
     private javax.swing.JTextField NombreProyecto;
@@ -2392,7 +1982,7 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     private javax.swing.JLabel NombreStatus7;
     private javax.swing.JLabel NombreStatus8;
     private javax.swing.JLabel NombreStatus9;
-    private javax.swing.JPasswordField PasswordAlumno;
+    public javax.swing.JPasswordField PasswordAlumno;
     private javax.swing.JPanel Profesor;
     private javax.swing.JPanel Proyecto;
     private javax.swing.JButton Regresar;
@@ -2410,19 +2000,10 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     private javax.swing.JTable TablaSemestre;
     private javax.swing.JTable TablaStatus;
     private javax.swing.JButton actualizar;
-    private javax.swing.JButton actualizaralumno;
-    private javax.swing.JButton actualizaralumnogrupo;
-    private javax.swing.JButton actualizarequipo;
-    private javax.swing.JButton actualizarmiembros;
+    private javax.swing.JButton actualizarprofesor;
     private javax.swing.JTextField buscaralumno;
-    private javax.swing.JTextField buscaralumnogrupo;
-    private javax.swing.JTextField buscarequipo;
-    private javax.swing.JTextField buscarmiembros;
+    private javax.swing.JTextField buscarprofesor;
     private javax.swing.JTextField buscarproyecto;
-    private javax.swing.JButton eliminaralumnogrupo;
-    private javax.swing.JButton eliminarequipo;
-    private javax.swing.JButton eliminarmiembros;
-    private javax.swing.JButton eliminarproyecto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2471,21 +2052,18 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JButton modificaralumno;
-    private javax.swing.JButton modificaralumnogrupo;
-    private javax.swing.JButton modificarequipo;
-    private javax.swing.JButton modificarmiembros;
+    private javax.swing.JButton modificarprofesor;
     private javax.swing.JButton modificarproyecto;
     private javax.swing.JTextField statusalumnogrupo;
     private javax.swing.JTextField statusequipo;
     private javax.swing.JTextField statusmiembros;
-    private javax.swing.JTextField txtApellidosAlumno;
+    public javax.swing.JTextField txtApellidosAlumno;
     private javax.swing.JTextField txtApellidosProfesor;
-    private javax.swing.JTextField txtEmailAlumno;
+    public javax.swing.JTextField txtEmailAlumno;
     private javax.swing.JTextField txtEmailProfesor;
     private javax.swing.JTextField txtGrupo;
     private javax.swing.JTextField txtHorario;
-    private javax.swing.JTextField txtIDAlumno;
+    public javax.swing.JTextField txtIDAlumno;
     private javax.swing.JTextField txtIDAlumnoEquipo;
     private javax.swing.JTextField txtIDAlumnoGrupo;
     private javax.swing.JTextField txtIDAlumnoMiembros;
@@ -2499,23 +2077,23 @@ public class OperacionesAlumno extends javax.swing.JFrame {
     private javax.swing.JTextField txtIDProfesorAlumnoGrupo;
     private javax.swing.JTextField txtIDProfesorGrupo;
     private javax.swing.JTextField txtIDProyecto;
-    private javax.swing.JTextField txtIDSemestre;
+    public javax.swing.JTextField txtIDSemestre;
     private javax.swing.JTextField txtIDStatus;
-    private javax.swing.JTextField txtIDStatusAlumno;
+    public javax.swing.JTextField txtIDStatusAlumno;
     private javax.swing.JTextField txtIDStatusProfesor;
-    private javax.swing.JTextField txtIDStatusSemestre;
-    private javax.swing.JTextField txtNombreAlumno;
+    public javax.swing.JTextField txtIDStatusSemestre;
+    public javax.swing.JTextField txtNombreAlumno;
     private javax.swing.JTextField txtNombreEquipo;
     private javax.swing.JTextField txtNombreMateria;
     private javax.swing.JTextField txtNombreProfesor;
-    private javax.swing.JTextField txtNombreSemestre;
+    public javax.swing.JTextField txtNombreSemestre;
     private javax.swing.JTextField txtNombreStatus;
     private javax.swing.JTextField txtPassProfesor;
     private javax.swing.JLabel txtStatus;
     private javax.swing.JTextField txtStatusGrupo;
     private javax.swing.JTextField txtStatusMateria;
     private javax.swing.JTextField txtTelefono;
-    private javax.swing.JTextField txtTelefonoAlumno;
+    public javax.swing.JTextField txtTelefonoAlumno;
     // End of variables declaration//GEN-END:variables
 
 }
