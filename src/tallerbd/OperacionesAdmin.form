@@ -519,6 +519,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="EdadEmpleado">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EdadEmpleadoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="SexoEmpleado">
                 </Component>
@@ -969,7 +972,6 @@
                           <EmptySpace pref="131" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="CompañiaProveedor" alignment="0" pref="99" max="32767" attributes="0"/>
-                              <Component id="IDProveedor" alignment="0" max="32767" attributes="0"/>
                               <Component id="NombreProveedor" max="32767" attributes="0"/>
                               <Component id="TelefonoProveedor" max="32767" attributes="0"/>
                               <Component id="DireccionProveedor" max="32767" attributes="0"/>
@@ -983,10 +985,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Proveedor" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="IDProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="Proveedor" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="NombreStatus3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1029,8 +1028,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="ID Proveedor"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="IDProveedor">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>

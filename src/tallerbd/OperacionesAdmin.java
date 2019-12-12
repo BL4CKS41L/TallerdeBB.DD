@@ -239,7 +239,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
      }
      void limpiarproveedores(){
      CompañiaProveedor.setText("");
-     IDProveedor.setText("");
+     
      NombreProveedor.setText("");
      TelefonoProveedor.setText("");
      DireccionProveedor.setText("");
@@ -335,7 +335,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         NombreStatus3 = new javax.swing.JLabel();
         CompañiaProveedor = new javax.swing.JTextField();
         Proveedor = new javax.swing.JLabel();
-        IDProveedor = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         NombreProveedor = new javax.swing.JTextField();
@@ -573,6 +572,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         jLabel36.setText("Sexo");
 
         jLabel37.setText("Domicilio");
+
+        EdadEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdadEmpleadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -925,7 +930,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CompañiaProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                    .addComponent(IDProveedor)
                     .addComponent(NombreProveedor)
                     .addComponent(TelefonoProveedor)
                     .addComponent(DireccionProveedor)
@@ -936,9 +940,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Proveedor)
-                    .addComponent(IDProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Proveedor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NombreStatus3)
@@ -1362,7 +1364,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
     private void actualizaralumnogrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizaralumnogrupoActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE proveedores SET ID_Proveedor='"+IDProveedor.getText()+"',Nombre='"+NombreProveedor.getText()+"',Telefono='"+TelefonoProveedor.getText()+
+            PreparedStatement pps = cn.prepareStatement ("UPDATE proveedores SET Nombre='"+NombreProveedor.getText()+"',Telefono='"+TelefonoProveedor.getText()+
                 "',Compañia='"+CompañiaProveedor.getText()+"',Direccion='"+DireccionProveedor.getText()+"',Marca='"+MarcaProveedor.getText()+"'WHERE ID_Proveedor='"+buscarproveedor.getText()+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos actualizados");
@@ -1377,7 +1379,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         int fila = TablaProveedor.getSelectedRow();
         if (fila>=0){
             buscarproveedor.setText(TablaProveedor.getValueAt(fila, 0).toString());
-            IDProveedor.setText(TablaProveedor.getValueAt(fila, 0).toString());
+           
             NombreProveedor.setText(TablaProveedor.getValueAt(fila, 1).toString());
             TelefonoProveedor.setText(TablaProveedor.getValueAt(fila, 2).toString());
             CompañiaProveedor.setText(TablaProveedor.getValueAt(fila, 3).toString());
@@ -1528,6 +1530,9 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             pps.setString (2, TelefonoEmpleado.getText());
             pps.setString (3, EdadEmpleado.getText());
             pps.setString (4, SexoEmpleado.getText());
+            if (SexoEmpleado.getText() != "M" || SexoEmpleado.getText() != "F"){
+                JOptionPane.showMessageDialog(null, "Error en el sexo");
+            }
             pps.setString (5, DomicilioEmpleado.getText());
 
             pps.executeUpdate();
@@ -1628,6 +1633,10 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_GuardarProductosActionPerformed
 
+    private void EdadEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdadEmpleadoActionPerformed
+        
+    }//GEN-LAST:event_EdadEmpleadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1692,7 +1701,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JButton GuardarProveedor;
     private javax.swing.JButton GuardarVentas;
     private javax.swing.JLabel IDAlumno;
-    private javax.swing.JTextField IDProveedor;
     private javax.swing.JTabbedPane JTabbedPane;
     private javax.swing.JButton LimpiarAlumno;
     private javax.swing.JButton LimpiarMiembros;
