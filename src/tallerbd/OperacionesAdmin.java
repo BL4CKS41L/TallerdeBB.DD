@@ -247,8 +247,11 @@ public class OperacionesAdmin extends javax.swing.JFrame {
      }
      
      void limpiarmiembros(){
-     Folio.setText("");
      EmpleadoVentas.setText("");
+     ProductoVentas.setText("");
+     FechaVentas.setText("");
+     TotalVentas.setText("");
+     TotalVentas.setText("");
      }
         /**
      * This method is called from within the constructor to initialize the form.
@@ -354,8 +357,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         NombreStatus4 = new javax.swing.JLabel();
         EmpleadoVentas = new javax.swing.JTextField();
-        IDStatus3 = new javax.swing.JLabel();
-        Folio = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         ProductoVentas = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -748,22 +749,20 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(NombreStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(83, 83, 83)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FechaEntrega)
-                            .addComponent(ProductoPedido)
-                            .addComponent(Cantidad)
-                            .addComponent(Total)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(IDAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83)
-                        .addComponent(FechaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(IDAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(NombreStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(83, 83, 83)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(FechaEntrega)
+                        .addComponent(ProductoPedido)
+                        .addComponent(Cantidad)
+                        .addComponent(Total))
+                    .addComponent(FechaPedido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1075,8 +1074,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
         NombreStatus4.setText("ID Empleado");
 
-        IDStatus3.setText("Folio");
-
         jLabel28.setText("ID Producto");
 
         jLabel9.setText("Fecha");
@@ -1095,8 +1092,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(NombreStatus4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(IDStatus3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(101, 101, 101))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1105,7 +1101,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Folio, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                     .addComponent(ProductoVentas)
                     .addComponent(EmpleadoVentas, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                     .addComponent(FechaVentas)
@@ -1116,11 +1111,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IDStatus3)
-                    .addComponent(Folio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NombreStatus4)
                     .addComponent(EmpleadoVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1302,7 +1293,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
     private void actualizarventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarventasActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE ventas SET Folio='"+Folio.getText()+"',ID_Empleado='"+EmpleadoVentas.getText()+"',ID_Producto='"+ProductoVentas.getText()+"',Fecha='"+FechaVentas.getText()+
+            PreparedStatement pps = cn.prepareStatement ("UPDATE ventas SET ID_Empleado='"+EmpleadoVentas.getText()+"',ID_Producto='"+ProductoVentas.getText()+"',Fecha='"+FechaVentas.getText()+
             "',Total_Piezas='"+TotalVentas.getText()+"',Total='"+PrecioTotal.getText()+"'WHERE Folio='"+buscarventas.getText()+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos actualizados");
@@ -1314,10 +1305,9 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarventasActionPerformed
 
     private void modificarventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarventasActionPerformed
-        int fila = TablaProveedor.getSelectedRow();
+        int fila = TablaVentas.getSelectedRow();
         if (fila>=0){
             buscarventas.setText(TablaVentas.getValueAt(fila, 0).toString());
-            Folio.setText(TablaVentas.getValueAt(fila, 0).toString());
             EmpleadoVentas.setText(TablaVentas.getValueAt(fila, 1).toString());
             ProductoVentas.setText(TablaVentas.getValueAt(fila, 2).toString());
             FechaVentas.setText(TablaVentas.getValueAt(fila, 3).toString());
@@ -1339,13 +1329,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
     private void GuardarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarVentasActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO ventas(Folio,ID_Empleado, ID_Producto,Fecha,Total_Piezas,Total) VALUES (?,?,?,?,?,?)");
-            pps.setString (1, Folio.getText());
-            pps.setString (2, EmpleadoVentas.getText());
-            pps.setString (3, ProductoVentas.getText());
-            pps.setString (4, FechaVentas.getText());
-            pps.setString (5, TotalVentas.getText());
-            pps.setString (6, PrecioTotal.getText());
+            PreparedStatement pps = cn.prepareStatement("INSERT INTO ventas(ID_Empleado, ID_Producto,Fecha,Total_Piezas,Total) VALUES (?,?,?,?,?)");
+            pps.setString (1, EmpleadoVentas.getText());
+            pps.setString (2, ProductoVentas.getText());
+            pps.setString (3, FechaVentas.getText());
+            pps.setString (4, TotalVentas.getText());
+            pps.setString (5, PrecioTotal.getText());
 
             pps.executeUpdate();
             MostrarTablaVentas();
@@ -1699,7 +1688,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     public javax.swing.JTextField FechaEntrega;
     public javax.swing.JTextField FechaPedido;
     private javax.swing.JTextField FechaVentas;
-    private javax.swing.JTextField Folio;
     private javax.swing.JButton GuardarEmpleado;
     private javax.swing.JButton GuardarPedidos;
     private javax.swing.JButton GuardarProductos;
@@ -1707,7 +1695,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JButton GuardarVentas;
     private javax.swing.JLabel IDAlumno;
     private javax.swing.JTextField IDProveedor;
-    private javax.swing.JLabel IDStatus3;
     private javax.swing.JTabbedPane JTabbedPane;
     private javax.swing.JButton LimpiarAlumno;
     private javax.swing.JButton LimpiarMiembros;
