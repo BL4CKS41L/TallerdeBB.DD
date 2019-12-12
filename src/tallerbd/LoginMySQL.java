@@ -210,8 +210,8 @@ public class LoginMySQL extends javax.swing.JFrame {
     }//GEN-LAST:event_ConectarAlumnoActionPerformed
 
     private void ConectarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConectarAlumnoMouseClicked
-            Operacionesmpleado empleado = new Operacionesmpleado();
-            empleado.setVisible(true);
+           // Operacionesmpleado empleado = new Operacionesmpleado();
+            //empleado.setVisible(true);
             dispose();
     }//GEN-LAST:event_ConectarAlumnoMouseClicked
 
