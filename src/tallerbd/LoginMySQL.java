@@ -48,12 +48,6 @@ public class LoginMySQL extends javax.swing.JFrame {
         ConectarAdmin = new javax.swing.JButton();
         Estado = new javax.swing.JLabel();
         PasswordAdmin = new javax.swing.JPasswordField();
-        jPanel2 = new javax.swing.JPanel();
-        UserProfesor = new javax.swing.JLabel();
-        CampoUserProfesor = new javax.swing.JTextField();
-        ConectarProfesor = new javax.swing.JButton();
-        PassProfesor = new javax.swing.JLabel();
-        PasswordProfesor = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         UserAlumno = new javax.swing.JLabel();
         CampoUserAlumno = new javax.swing.JTextField();
@@ -89,13 +83,13 @@ public class LoginMySQL extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UserAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PassAdmin))
-                        .addGap(121, 121, 121)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CampoUserAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                            .addComponent(PasswordAdmin)))
+                            .addComponent(PassAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UserAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(90, 90, 90)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoUserAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PasswordAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(ConectarAdmin)
@@ -106,15 +100,15 @@ public class LoginMySQL extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(UserAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CampoUserAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PassAdmin)
                     .addComponent(PasswordAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Estado, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,62 +119,6 @@ public class LoginMySQL extends javax.swing.JFrame {
         );
 
         Alumno.addTab("Admin", jPanel1);
-
-        UserProfesor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        UserProfesor.setText("Usuario");
-
-        ConectarProfesor.setText("Conectar");
-        ConectarProfesor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ConectarProfesorMouseClicked(evt);
-            }
-        });
-        ConectarProfesor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConectarProfesorActionPerformed(evt);
-            }
-        });
-
-        PassProfesor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        PassProfesor.setText("Contraseña");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UserProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PassProfesor))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CampoUserProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                            .addComponent(PasswordProfesor))
-                        .addGap(82, 82, 82))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(ConectarProfesor)
-                        .addGap(62, 266, Short.MAX_VALUE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UserProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CampoUserProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PassProfesor)
-                    .addComponent(PasswordProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(ConectarProfesor)
-                .addGap(22, 22, 22))
-        );
-
-        Alumno.addTab("Gerente", jPanel2);
 
         UserAlumno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         UserAlumno.setText("Usuario");
@@ -208,10 +146,10 @@ public class LoginMySQL extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UserAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PassAlumno))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PassAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UserAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CampoUserAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                             .addComponent(PasswordAlumno))
@@ -231,7 +169,7 @@ public class LoginMySQL extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(PassAlumno)
                     .addComponent(PasswordAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(ConectarAlumno)
                 .addGap(22, 22, 22))
         );
@@ -258,63 +196,48 @@ public class LoginMySQL extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ConectarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConectarAlumnoActionPerformed
+        Connection conexion = null;
+        try{
+            Class.forName(driver);
+
+            conexion = (Connection) DriverManager.getConnection(url, CampoUserAlumno.getText(),PasswordAlumno.getText());
+        }
+
+        catch (ClassNotFoundException | SQLException e){
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_ConectarAlumnoActionPerformed
+
+    private void ConectarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConectarAlumnoMouseClicked
+            Operacionesmpleado empleado = new Operacionesmpleado();
+            empleado.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_ConectarAlumnoMouseClicked
+
     private void ConectarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConectarAdminActionPerformed
-      Connection conexion = null;
+        Connection conexion = null;
         try{
             Class.forName(driver);
             // Nos conectamos a la bd
-            conexion = (Connection) DriverManager.getConnection(url, CampoUserAdmin.getText(),PasswordAdmin.getText());               
-            }
-            // Si la conexion NO fue exitosa mostramos un mensaje de error
-            catch (ClassNotFoundException | SQLException e){
-                JOptionPane.showMessageDialog(this, e);       
-            }
-        
+            conexion = (Connection) DriverManager.getConnection(url, CampoUserAdmin.getText(),PasswordAdmin.getText());
+        }
+        // Si la conexion NO fue exitosa mostramos un mensaje de error
+        catch (ClassNotFoundException | SQLException e){
+            JOptionPane.showMessageDialog(this, e);
+        }
+
     }//GEN-LAST:event_ConectarAdminActionPerformed
-    
-    private void ConectarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConectarProfesorActionPerformed
-       Connection conexion = null;
-        try{
-            Class.forName(driver);
-            
-            conexion = (Connection) DriverManager.getConnection(url, CampoUserProfesor.getText(),PasswordProfesor.getText());               
-            }
-            
-            catch (ClassNotFoundException | SQLException e){
-                JOptionPane.showMessageDialog(this, e);       
-            }
-    }//GEN-LAST:event_ConectarProfesorActionPerformed
-    
-    
-    
-    private void ConectarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConectarAlumnoActionPerformed
-     Connection conexion = null;
-        try{
-            Class.forName(driver);
-            
-            conexion = (Connection) DriverManager.getConnection(url, CampoUserAlumno.getText(),PasswordAlumno.getText());               
-            }
-            
-            catch (ClassNotFoundException | SQLException e){
-                JOptionPane.showMessageDialog(this, e);       
-            }
-    }//GEN-LAST:event_ConectarAlumnoActionPerformed
-   
-    
+
     private void ConectarAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConectarAdminMouseClicked
-    OperacionesAdmin opaA = new OperacionesAdmin();
-    opaA.setVisible(true);
-    dispose();
+        OperacionesAdmin opaA = new OperacionesAdmin();
+        opaA.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ConectarAdminMouseClicked
-
-    private void ConectarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConectarAlumnoMouseClicked
         
-    }//GEN-LAST:event_ConectarAlumnoMouseClicked
-
-    private void ConectarProfesorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConectarProfesorMouseClicked
+    
        
-    }//GEN-LAST:event_ConectarProfesorMouseClicked
-
+    
     /**
      * @param args the command line arguments
      */
@@ -355,24 +278,18 @@ public class LoginMySQL extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane Alumno;
-    public javax.swing.JTextField CampoUserAdmin;
-    public javax.swing.JTextField CampoUserAlumno;
-    public javax.swing.JTextField CampoUserProfesor;
-    public javax.swing.JButton ConectarAdmin;
+    private javax.swing.JTextField CampoUserAdmin;
+    private javax.swing.JTextField CampoUserAlumno;
+    private javax.swing.JButton ConectarAdmin;
     private javax.swing.JButton ConectarAlumno;
-    private javax.swing.JButton ConectarProfesor;
     private javax.swing.JLabel Estado;
     private javax.swing.JLabel PassAdmin;
     private javax.swing.JLabel PassAlumno;
-    private javax.swing.JLabel PassProfesor;
-    public javax.swing.JPasswordField PasswordAdmin;
-    public javax.swing.JPasswordField PasswordAlumno;
-    public javax.swing.JPasswordField PasswordProfesor;
+    private javax.swing.JPasswordField PasswordAdmin;
+    private javax.swing.JPasswordField PasswordAlumno;
     private javax.swing.JLabel UserAdmin;
     private javax.swing.JLabel UserAlumno;
-    private javax.swing.JLabel UserProfesor;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
   
