@@ -251,7 +251,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
      ProductoVentas.setText("");
      FechaVentas.setText("");
      TotalVentas.setText("");
-     TotalVentas.setText("");
+     PrecioTotal.setText("");
      }
         /**
      * This method is called from within the constructor to initialize the form.
@@ -263,7 +263,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         JTabbedPane = new javax.swing.JTabbedPane();
-        Status = new javax.swing.JPanel();
+        Productos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaProductos = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
@@ -288,7 +288,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         Modificarproducto = new javax.swing.JButton();
         actualizarproductos = new javax.swing.JButton();
         eliminarproducto = new javax.swing.JButton();
-        Semestre = new javax.swing.JPanel();
+        Empleados = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         NombreStatus1 = new javax.swing.JLabel();
         NombreEmpleado = new javax.swing.JTextField();
@@ -309,7 +309,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         LimpiarSemestre = new javax.swing.JButton();
         actualizarempleados = new javax.swing.JButton();
         EliminarEmpleado = new javax.swing.JButton();
-        Alumno = new javax.swing.JPanel();
+        Pedidos = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         NombreStatus2 = new javax.swing.JLabel();
         FechaPedido = new javax.swing.JTextField();
@@ -330,7 +330,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         modificaralumno = new javax.swing.JButton();
         actualizaralumno = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        AlumnoGrupo = new javax.swing.JPanel();
+        Proveedores = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         NombreStatus3 = new javax.swing.JLabel();
         CompañiaProveedor = new javax.swing.JTextField();
@@ -353,7 +353,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         modificarproveedores = new javax.swing.JButton();
         actualizaralumnogrupo = new javax.swing.JButton();
         eliminaralumnogrupo = new javax.swing.JButton();
-        AlumnoMiembros = new javax.swing.JPanel();
+        Ventas = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         NombreStatus4 = new javax.swing.JLabel();
         EmpleadoVentas = new javax.swing.JTextField();
@@ -506,51 +506,51 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout StatusLayout = new javax.swing.GroupLayout(Status);
-        Status.setLayout(StatusLayout);
-        StatusLayout.setHorizontalGroup(
-            StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StatusLayout.createSequentialGroup()
-                .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StatusLayout.createSequentialGroup()
+        javax.swing.GroupLayout ProductosLayout = new javax.swing.GroupLayout(Productos);
+        Productos.setLayout(ProductosLayout);
+        ProductosLayout.setHorizontalGroup(
+            ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProductosLayout.createSequentialGroup()
+                .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ProductosLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buscarproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(StatusLayout.createSequentialGroup()
+                    .addGroup(ProductosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ConsultarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(GuardarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(LimpiarProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(51, 51, 51)
-                        .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(Modificarproducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(actualizarproductos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                             .addComponent(eliminarproducto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(89, Short.MAX_VALUE))
         );
-        StatusLayout.setVerticalGroup(
-            StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StatusLayout.createSequentialGroup()
-                .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(StatusLayout.createSequentialGroup()
+        ProductosLayout.setVerticalGroup(
+            ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProductosLayout.createSequentialGroup()
+                .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ProductosLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GuardarProductos)
                             .addComponent(Modificarproducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LimpiarProductos)
                             .addComponent(actualizarproductos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(StatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ConsultarProductos)
                             .addComponent(eliminarproducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE))
-                    .addGroup(StatusLayout.createSequentialGroup()
+                    .addGroup(ProductosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
@@ -560,7 +560,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addGap(61, 61, 61))
         );
 
-        JTabbedPane.addTab("Productos", Status);
+        JTabbedPane.addTab("Productos", Productos);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -673,51 +673,51 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout SemestreLayout = new javax.swing.GroupLayout(Semestre);
-        Semestre.setLayout(SemestreLayout);
-        SemestreLayout.setHorizontalGroup(
-            SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SemestreLayout.createSequentialGroup()
-                .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SemestreLayout.createSequentialGroup()
+        javax.swing.GroupLayout EmpleadosLayout = new javax.swing.GroupLayout(Empleados);
+        Empleados.setLayout(EmpleadosLayout);
+        EmpleadosLayout.setHorizontalGroup(
+            EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EmpleadosLayout.createSequentialGroup()
+                .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EmpleadosLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
-                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(SemestreLayout.createSequentialGroup()
-                                .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EmpleadosLayout.createSequentialGroup()
+                                .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(ConsultarEmpleados)
                                     .addComponent(GuardarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(LimpiarSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(actualizarempleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(modificarempleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(EliminarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(buscarempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(SemestreLayout.createSequentialGroup()
+                    .addGroup(EmpleadosLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(150, Short.MAX_VALUE))
         );
-        SemestreLayout.setVerticalGroup(
-            SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SemestreLayout.createSequentialGroup()
+        EmpleadosLayout.setVerticalGroup(
+            EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EmpleadosLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SemestreLayout.createSequentialGroup()
-                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EmpleadosLayout.createSequentialGroup()
+                        .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GuardarEmpleado)
                             .addComponent(actualizarempleados))
                         .addGap(9, 9, 9)
-                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LimpiarSemestre)
                             .addComponent(modificarempleado))
-                        .addGroup(SemestreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(SemestreLayout.createSequentialGroup()
+                        .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EmpleadosLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(ConsultarEmpleados))
-                            .addGroup(SemestreLayout.createSequentialGroup()
+                            .addGroup(EmpleadosLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(EliminarEmpleado)))
                         .addGap(29, 29, 29)
@@ -728,7 +728,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
-        JTabbedPane.addTab("Empleados", Semestre);
+        JTabbedPane.addTab("Empleados", Empleados);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -843,46 +843,46 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout AlumnoLayout = new javax.swing.GroupLayout(Alumno);
-        Alumno.setLayout(AlumnoLayout);
-        AlumnoLayout.setHorizontalGroup(
-            AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlumnoLayout.createSequentialGroup()
+        javax.swing.GroupLayout PedidosLayout = new javax.swing.GroupLayout(Pedidos);
+        Pedidos.setLayout(PedidosLayout);
+        PedidosLayout.setHorizontalGroup(
+            PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PedidosLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3)
-                    .addGroup(AlumnoLayout.createSequentialGroup()
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AlumnoLayout.createSequentialGroup()
+                    .addGroup(PedidosLayout.createSequentialGroup()
+                        .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PedidosLayout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(ConsultarStats1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(GuardarPedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(LimpiarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(33, 33, 33)
-                                .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(actualizaralumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(modificaralumno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(buscarpedido, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(193, Short.MAX_VALUE))))
         );
-        AlumnoLayout.setVerticalGroup(
-            AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlumnoLayout.createSequentialGroup()
+        PedidosLayout.setVerticalGroup(
+            PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PedidosLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AlumnoLayout.createSequentialGroup()
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PedidosLayout.createSequentialGroup()
+                        .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GuardarPedidos)
                             .addComponent(modificaralumno))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LimpiarAlumno)
                             .addComponent(actualizaralumno))
                         .addGap(14, 14, 14)
-                        .addGroup(AlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(PedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ConsultarStats1)
                             .addComponent(jButton3)))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -893,7 +893,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
         );
 
-        JTabbedPane.addTab("Pedidos", Alumno);
+        JTabbedPane.addTab("Pedidos", Pedidos);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1014,52 +1014,52 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout AlumnoGrupoLayout = new javax.swing.GroupLayout(AlumnoGrupo);
-        AlumnoGrupo.setLayout(AlumnoGrupoLayout);
-        AlumnoGrupoLayout.setHorizontalGroup(
-            AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlumnoGrupoLayout.createSequentialGroup()
-                .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AlumnoGrupoLayout.createSequentialGroup()
+        javax.swing.GroupLayout ProveedoresLayout = new javax.swing.GroupLayout(Proveedores);
+        Proveedores.setLayout(ProveedoresLayout);
+        ProveedoresLayout.setHorizontalGroup(
+            ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProveedoresLayout.createSequentialGroup()
+                .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ProveedoresLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(GuardarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ConsultarProveedores)
                             .addComponent(LimpiarProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(modificarproveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(83, 83, 83)
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buscarproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(eliminaralumnogrupo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(actualizaralumnogrupo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(AlumnoGrupoLayout.createSequentialGroup()
+                    .addGroup(ProveedoresLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
-        AlumnoGrupoLayout.setVerticalGroup(
-            AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlumnoGrupoLayout.createSequentialGroup()
+        ProveedoresLayout.setVerticalGroup(
+            ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProveedoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AlumnoGrupoLayout.createSequentialGroup()
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ProveedoresLayout.createSequentialGroup()
+                        .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GuardarProveedor)
                             .addComponent(buscarproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AlumnoGrupoLayout.createSequentialGroup()
+                        .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ProveedoresLayout.createSequentialGroup()
                                 .addGap(8, 8, 8)
                                 .addComponent(LimpiarProveedores)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ConsultarProveedores))
-                            .addGroup(AlumnoGrupoLayout.createSequentialGroup()
+                            .addGroup(ProveedoresLayout.createSequentialGroup()
                                 .addGap(28, 28, 28)
                                 .addComponent(actualizaralumnogrupo)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoGrupoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(modificarproveedores)
                             .addComponent(eliminaralumnogrupo)))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1068,7 +1068,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        JTabbedPane.addTab("Proveedores", AlumnoGrupo);
+        JTabbedPane.addTab("Proveedores", Proveedores);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1186,46 +1186,46 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout AlumnoMiembrosLayout = new javax.swing.GroupLayout(AlumnoMiembros);
-        AlumnoMiembros.setLayout(AlumnoMiembrosLayout);
-        AlumnoMiembrosLayout.setHorizontalGroup(
-            AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlumnoMiembrosLayout.createSequentialGroup()
+        javax.swing.GroupLayout VentasLayout = new javax.swing.GroupLayout(Ventas);
+        Ventas.setLayout(VentasLayout);
+        VentasLayout.setHorizontalGroup(
+            VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(VentasLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5)
-                    .addGroup(AlumnoMiembrosLayout.createSequentialGroup()
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(VentasLayout.createSequentialGroup()
+                        .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(buscarventas, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(AlumnoMiembrosLayout.createSequentialGroup()
+                            .addGroup(VentasLayout.createSequentialGroup()
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(ConsultarVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(GuardarVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(LimpiarMiembros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(59, 59, 59)
-                                .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(actualizarventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(modificarventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(eliminarventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap(174, Short.MAX_VALUE))))
         );
-        AlumnoMiembrosLayout.setVerticalGroup(
-            AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlumnoMiembrosLayout.createSequentialGroup()
+        VentasLayout.setVerticalGroup(
+            VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(VentasLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AlumnoMiembrosLayout.createSequentialGroup()
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(VentasLayout.createSequentialGroup()
+                        .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GuardarVentas)
                             .addComponent(modificarventas))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LimpiarMiembros)
                             .addComponent(actualizarventas))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(AlumnoMiembrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ConsultarVentas)
                             .addComponent(eliminarventas)))
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1236,7 +1236,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        JTabbedPane.addTab("Ventas", AlumnoMiembros);
+        JTabbedPane.addTab("Ventas", Ventas);
 
         Regresar.setText("Regresar");
         Regresar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1667,9 +1667,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Alumno;
-    private javax.swing.JPanel AlumnoGrupo;
-    private javax.swing.JPanel AlumnoMiembros;
     private javax.swing.JTextField CaducidadProducto;
     public javax.swing.JTextField Cantidad;
     private javax.swing.JTextField CodigoProducto;
@@ -1685,6 +1682,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField EdadEmpleado;
     private javax.swing.JButton EliminarEmpleado;
     private javax.swing.JTextField EmpleadoVentas;
+    private javax.swing.JPanel Empleados;
     public javax.swing.JTextField FechaEntrega;
     public javax.swing.JTextField FechaPedido;
     private javax.swing.JTextField FechaVentas;
@@ -1712,15 +1710,16 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel NombreStatus2;
     private javax.swing.JLabel NombreStatus3;
     private javax.swing.JLabel NombreStatus4;
+    private javax.swing.JPanel Pedidos;
     private javax.swing.JTextField PrecioProducto;
     private javax.swing.JTextField PrecioTotal;
     public javax.swing.JTextField ProductoPedido;
     private javax.swing.JTextField ProductoVentas;
+    private javax.swing.JPanel Productos;
     private javax.swing.JLabel Proveedor;
+    private javax.swing.JPanel Proveedores;
     private javax.swing.JButton Regresar;
-    private javax.swing.JPanel Semestre;
     private javax.swing.JTextField SexoEmpleado;
-    private javax.swing.JPanel Status;
     private javax.swing.JTextField StockProducto;
     private javax.swing.JTable TablaEmpleado;
     private javax.swing.JTable TablaPedidos;
@@ -1731,6 +1730,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField TelefonoProveedor;
     private javax.swing.JTextField Total;
     private javax.swing.JTextField TotalVentas;
+    private javax.swing.JPanel Ventas;
     private javax.swing.JButton actualizaralumno;
     private javax.swing.JButton actualizaralumnogrupo;
     private javax.swing.JButton actualizarempleados;
