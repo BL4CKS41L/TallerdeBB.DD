@@ -102,9 +102,9 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     }
       void MostrarTablaPedidos(){
     DefaultTableModel modelo = new DefaultTableModel();
-    modelo.addColumn("ID Pedido");
-    modelo.addColumn("Fecha de Pedido");
     modelo.addColumn("Fecha Entrega");
+    modelo.addColumn("Fecha de Pedido");
+    modelo.addColumn("ID Pedido");
     modelo.addColumn("ID Producto");
     modelo.addColumn("Cantidad de Productos");
     modelo.addColumn("Total");
@@ -158,7 +158,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     
     TablaProveedor.setModel(modelo);
     
-    String sql = "SELECT * FROM semestre";
+    String sql = "SELECT * FROM proveedores";
     String datos[] = new String [6];
     Statement st;
         try {
@@ -190,7 +190,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
        
     TablaVentas.setModel(modelo);
     
-    String sql = "SELECT * FROM alumno_miembros";
+    String sql = "SELECT * FROM ventas";
     String datos[] = new String [6];
     Statement st;
         try {
@@ -229,7 +229,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
      DomicilioEmpleado.setText("");     
      }
      void limpiarpedidos(){
-     IDPedido.setText("");
+     
      FechaPedido.setText("");
      FechaEntrega.setText("");
      ProductoPedido.setText("");
@@ -250,11 +250,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
      Folio.setText("");
      EmpleadoVentas.setText("");
      }
-    
-     
-     
-     
-     
         /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -316,8 +311,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         NombreStatus2 = new javax.swing.JLabel();
         FechaPedido = new javax.swing.JTextField();
         IDAlumno = new javax.swing.JLabel();
-        IDPedido = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -742,8 +735,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
         IDAlumno.setText("Fecha de pedido");
 
-        jLabel2.setText("ID Pedido");
-
         jLabel3.setText("ID Producto");
 
         jLabel4.setText("Cantidad de Productos");
@@ -765,31 +756,22 @@ public class OperacionesAdmin extends javax.swing.JFrame {
                             .addComponent(NombreStatus2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(83, 83, 83)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FechaEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(FechaEntrega)
                             .addComponent(ProductoPedido)
                             .addComponent(Cantidad)
                             .addComponent(Total)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(IDAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(IDAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(83, 83, 83)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(IDPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(FechaPedido))))
+                        .addComponent(FechaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(IDPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FechaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FechaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(IDAlumno))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1340,8 +1322,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
             ProductoVentas.setText(TablaVentas.getValueAt(fila, 2).toString());
             FechaVentas.setText(TablaVentas.getValueAt(fila, 3).toString());
             TotalVentas.setText(TablaVentas.getValueAt(fila, 4).toString());
-            PrecioTotal.setText(TablaVentas.getValueAt(fila, 5).toString());
-            
+            PrecioTotal.setText(TablaVentas.getValueAt(fila, 5).toString());  
         }
         else {
             JOptionPane.showMessageDialog(null,"Fila no selecionada");
@@ -1427,13 +1408,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
     private void GuardarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarProveedorActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO proveedores(ID_Proveedor,Nombre,Telefono,Compañia,Direccion,Marca) VALUES (?,?,?,?,?,?)");
-            pps.setString (1, IDProveedor.getText());
-            pps.setString (2, NombreProveedor.getText());
-            pps.setString (3, TelefonoProveedor.getText());
-            pps.setString (4, CompañiaProveedor.getText());
-            pps.setString (5, DireccionProveedor.getText());
-            pps.setString (6, MarcaProveedor.getText());
+            PreparedStatement pps = cn.prepareStatement("INSERT INTO proveedores(Nombre,Telefono,Compañia,Direccion,Marca) VALUES (?,?,?,?,?)");
+            pps.setString (1, NombreProveedor.getText());
+            pps.setString (2, TelefonoProveedor.getText());
+            pps.setString (3, CompañiaProveedor.getText());
+            pps.setString (4, DireccionProveedor.getText());
+            pps.setString (5, MarcaProveedor.getText());
 
             pps.executeUpdate();
             MostrarTablaProveedores();
@@ -1461,7 +1441,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
 
     private void actualizaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizaralumnoActionPerformed
         try {
-            PreparedStatement pps = cn.prepareStatement ("UPDATE pedidos SET ID_Pedido='"+IDPedido.getText()+"',Fecha_Pedido='"+FechaPedido.getText()+"',Fecha_Entrega='"+FechaEntrega.getText()+
+            PreparedStatement pps = cn.prepareStatement ("UPDATE pedidos SET Fecha_Pedido='"+FechaPedido.getText()+"',Fecha_Entrega='"+FechaEntrega.getText()+
                 "',ProductoPedido='"+ProductoPedido.getText()+"',Cantidad='"+Cantidad.getText()+"',Total='"+Total.getText()+"'WHERE ID_Pedido='"+buscarpedido.getText()+"'");
             pps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos actualizados");
@@ -1476,7 +1456,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
         int fila = TablaPedidos.getSelectedRow();
         if (fila>=0){
             buscarpedido.setText(TablaPedidos.getValueAt(fila, 0).toString());
-            IDPedido.setText(TablaPedidos.getValueAt(fila, 0).toString());
             FechaPedido.setText(TablaPedidos.getValueAt(fila, 1).toString());
             FechaEntrega.setText(TablaPedidos.getValueAt(fila, 2).toString());
             ProductoPedido.setText(TablaPedidos.getValueAt(fila, 3).toString());
@@ -1500,13 +1479,12 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private void GuardarPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarPedidosActionPerformed
 
         try {
-            PreparedStatement pps = cn.prepareStatement("INSERT INTO pedidos(Fecha_Pedido,Fecha_Entrega,ID_Pedido,ID_Producto,Cantidad_Productos,Total) VALUES (?,?,?,?,?,?)");
+            PreparedStatement pps = cn.prepareStatement("INSERT INTO pedidos(Fecha_Pedido,Fecha_Entrega,ID_Producto,Cantidad_Productos,Total) VALUES (?,?,?,?,?,?)");
             pps.setString (1, FechaPedido.getText());
             pps.setString (2, FechaEntrega.getText());
-            pps.setString (3, IDPedido.getText());
-            pps.setString (4, ProductoPedido.getText());
-            pps.setString (5, Cantidad.getText());
-            pps.setString (6, Total.getText());
+            pps.setString (3, ProductoPedido.getText());
+            pps.setString (4, Cantidad.getText());
+            pps.setString (5, Total.getText());
 
             pps.executeUpdate();
             MostrarTablaPedidos();
@@ -1704,7 +1682,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel AlumnoGrupo;
     private javax.swing.JPanel AlumnoMiembros;
     private javax.swing.JTextField CaducidadProducto;
-    private javax.swing.JTextField Cantidad;
+    public javax.swing.JTextField Cantidad;
     private javax.swing.JTextField CodigoProducto;
     private javax.swing.JTextField CompañiaProveedor;
     private javax.swing.JButton ConsultarEmpleados;
@@ -1718,8 +1696,8 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField EdadEmpleado;
     private javax.swing.JButton EliminarEmpleado;
     private javax.swing.JTextField EmpleadoVentas;
-    private javax.swing.JTextField FechaEntrega;
-    private javax.swing.JTextField FechaPedido;
+    public javax.swing.JTextField FechaEntrega;
+    public javax.swing.JTextField FechaPedido;
     private javax.swing.JTextField FechaVentas;
     private javax.swing.JTextField Folio;
     private javax.swing.JButton GuardarEmpleado;
@@ -1728,7 +1706,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JButton GuardarProveedor;
     private javax.swing.JButton GuardarVentas;
     private javax.swing.JLabel IDAlumno;
-    private javax.swing.JTextField IDPedido;
     private javax.swing.JTextField IDProveedor;
     private javax.swing.JLabel IDStatus3;
     private javax.swing.JTabbedPane JTabbedPane;
@@ -1740,7 +1717,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField MarcaProducto;
     private javax.swing.JTextField MarcaProveedor;
     private javax.swing.JButton Modificarproducto;
-    private javax.swing.JTextField NombreEmpleado;
+    public javax.swing.JTextField NombreEmpleado;
     private javax.swing.JTextField NombreProducto;
     private javax.swing.JTextField NombreProveedor;
     private javax.swing.JLabel NombreStatus;
@@ -1750,7 +1727,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel NombreStatus4;
     private javax.swing.JTextField PrecioProducto;
     private javax.swing.JTextField PrecioTotal;
-    private javax.swing.JTextField ProductoPedido;
+    public javax.swing.JTextField ProductoPedido;
     private javax.swing.JTextField ProductoVentas;
     private javax.swing.JLabel Proveedor;
     private javax.swing.JButton Regresar;
@@ -1763,7 +1740,7 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JTable TablaProductos;
     private javax.swing.JTable TablaProveedor;
     private javax.swing.JTable TablaVentas;
-    private javax.swing.JTextField TelefonoEmpleado;
+    public javax.swing.JTextField TelefonoEmpleado;
     private javax.swing.JTextField TelefonoProveedor;
     private javax.swing.JTextField Total;
     private javax.swing.JTextField TotalVentas;
@@ -1784,7 +1761,6 @@ public class OperacionesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
